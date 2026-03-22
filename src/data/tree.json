@@ -1,0 +1,16 @@
+{
+  "roots": ["backend-engineering", "frontend-ui", "future-focus"],
+  "labels": {
+    "backend-engineering": "Backend Engineering",
+    "frontend-ui": "Frontend and UI",
+    "future-focus": "Future Focus"
+  },
+  "nodes": {
+    "backend-engineering": ["php", "symfony", "mysql"],
+    "frontend-ui": ["javascript", "react", "typescript", "css"],
+    "future-focus": ["go", "kubernetes"],
+    "php": ["symfony"],
+    "javascript": ["react", "typescript"],
+    "react": ["css"]
+  }
+}

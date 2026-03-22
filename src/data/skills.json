@@ -1,0 +1,148 @@
+{
+  "php": {
+    "name": "PHP",
+    "icon": "php",
+    "level": "STRONG",
+    "status": "current",
+    "years": 10,
+    "summary": "Primary backend language across most long-lived production work.",
+    "details": "Used as the main delivery language for business-critical backend systems, internal platforms, third-party integrations, and ongoing modernization work in mature codebases.",
+    "highlights": [
+      "Designed and evolved backend architecture in production environments",
+      "Led legacy cleanup and incremental refactoring work",
+      "Improved maintainability, delivery speed, and operational confidence"
+    ],
+    "tags": ["backend", "language", "architecture", "api"],
+    "relatedSkills": ["symfony", "mysql", "javascript"]
+  },
+  "symfony": {
+    "name": "Symfony",
+    "icon": "symfony",
+    "level": "STRONG",
+    "status": "current",
+    "years": 7,
+    "summary": "Main framework for structured, maintainable backend application design.",
+    "details": "Used to organize large codebases around explicit services, messaging, CLI tooling, reusable modules, and predictable engineering workflows.",
+    "highlights": [
+      "Strong use of dependency injection and service boundaries",
+      "Built operational and developer-facing console tooling",
+      "Applied incremental framework-driven refactoring in mature systems"
+    ],
+    "tags": ["backend", "framework", "php", "architecture"],
+    "relatedSkills": ["php", "mysql", "typescript"]
+  },
+  "mysql": {
+    "name": "MySQL",
+    "icon": "mysql",
+    "level": "CONFIDENT",
+    "status": "current",
+    "years": 8,
+    "summary": "Relational database work for production applications and internal systems.",
+    "details": "Used for schema design, query tuning, migrations, reporting support, and investigation of data-related production issues in backend-heavy products.",
+    "highlights": [
+      "Handled schema evolution in long-running projects",
+      "Analyzed and improved slow or complex queries",
+      "Diagnosed production issues involving data consistency and performance"
+    ],
+    "tags": ["backend", "database", "sql", "operations"],
+    "relatedSkills": ["php", "symfony", "go"]
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "icon": "javascript",
+    "level": "CONFIDENT",
+    "status": "current",
+    "years": 6,
+    "summary": "General-purpose frontend and tooling language used across multiple project types.",
+    "details": "Used for browser-side interactions, UI enhancements, build and automation tasks, and cross-stack work where frontend and backend concerns meet.",
+    "highlights": [
+      "Built interactive UI behavior for product interfaces",
+      "Used scripting to support delivery and tooling tasks",
+      "Worked across backend and frontend boundaries when product work required it"
+    ],
+    "tags": ["frontend", "language", "ui", "tooling"],
+    "relatedSkills": ["react", "typescript", "php"]
+  },
+  "react": {
+    "name": "React",
+    "icon": "react",
+    "level": "WORKING",
+    "status": "learning",
+    "years": 2,
+    "summary": "Component-based frontend work with a focus on maintainable interactive UIs.",
+    "details": "Used for building stateful interfaces, reusable UI components, and small apps where local interaction quality and structure matter.",
+    "highlights": [
+      "Built component-driven screens and reusable UI pieces",
+      "Worked with local state and interactive page flows",
+      "Used Vite-based setup for modern frontend development"
+    ],
+    "tags": ["frontend", "ui", "library", "component"],
+    "relatedSkills": ["javascript", "typescript", "css"]
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "icon": "typescript",
+    "level": "WORKING",
+    "status": "learning",
+    "years": 2,
+    "summary": "Typed JavaScript used to improve safety and maintainability in frontend code.",
+    "details": "Used to improve refactoring confidence, clarify component contracts, and reduce ambiguity when frontend code grows beyond small scripts.",
+    "highlights": [
+      "Used types to tighten component and data contracts",
+      "Improved refactoring safety in UI code",
+      "Benefited from stronger editor and tooling feedback"
+    ],
+    "tags": ["frontend", "language", "typed", "maintainability"],
+    "relatedSkills": ["javascript", "react", "php"]
+  },
+  "css": {
+    "name": "CSS",
+    "icon": "css",
+    "level": "CONFIDENT",
+    "status": "current",
+    "years": 6,
+    "summary": "Styling work for product interfaces, admin tools, and internal applications.",
+    "details": "Used to build responsive layouts, improve information hierarchy, and turn functional UI into clearer and more usable interfaces.",
+    "highlights": [
+      "Implemented responsive layouts for practical product screens",
+      "Improved readability and interaction clarity in existing UIs",
+      "Supported design execution without depending on heavy frameworks"
+    ],
+    "tags": ["frontend", "ui", "styling", "responsive"],
+    "relatedSkills": ["javascript", "react", "typescript"]
+  },
+  "go": {
+    "name": "Go",
+    "icon": "go",
+    "level": "PLANNED",
+    "status": "future",
+    "summary": "Planned backend language for simpler services and stronger systems-level breadth.",
+    "details": "Target skill for exploring lean service design, concurrency patterns, CLI tooling, and a different set of tradeoffs from the current primary stack.",
+    "highlights": [
+      "Evaluate fit for small backend services and tooling",
+      "Learn idiomatic concurrency and deployment patterns",
+      "Broaden backend perspective beyond the current main stack"
+    ],
+    "tags": ["backend", "future", "language", "systems"],
+    "relatedSkills": ["php", "mysql"],
+    "targetDescription": "Build one small production-style service and one CLI tool.",
+    "motivation": "Expand backend range beyond the current primary stack."
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "icon": "kubernetes",
+    "level": "PLANNED",
+    "status": "future",
+    "summary": "Planned infrastructure skill for stronger deployment and platform understanding.",
+    "details": "Target skill for understanding container orchestration, deployment workflows, and how application concerns connect to platform-level reliability and operations.",
+    "highlights": [
+      "Learn the operational model behind orchestrated services",
+      "Understand deployment and rollout mechanics more deeply",
+      "Improve fluency at the application-platform boundary"
+    ],
+    "tags": ["future", "infrastructure", "platform", "operations"],
+    "relatedSkills": ["go", "mysql"],
+    "targetDescription": "Deploy a small service stack with observable rollout and rollback flow.",
+    "motivation": "Strengthen infrastructure awareness beyond application code."
+  }
+}
