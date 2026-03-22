@@ -1,16 +1,21 @@
 {
-  "roots": ["backend-engineering", "frontend-ui", "future-focus"],
+  "roots": ["backend-engineering", "frontend-ui", "tooling-and-platform", "future-focus"],
   "labels": {
     "backend-engineering": "Backend Engineering",
     "frontend-ui": "Frontend and UI",
+    "tooling-and-platform": "Tooling and Platform",
     "future-focus": "Future Focus"
   },
   "nodes": {
-    "backend-engineering": ["php", "symfony", "mysql"],
-    "frontend-ui": ["javascript", "react", "typescript", "css"],
+    "backend-engineering": ["php", "java", "mysql", "rabbitmq", "redis", "n8n"],
+    "frontend-ui": ["html", "javascript", "css"],
+    "tooling-and-platform": ["git", "docker", "linux", "webpack", "new-relic", "chatgpt", "data-structures"],
     "future-focus": ["go", "kubernetes"],
     "php": ["symfony"],
-    "javascript": ["react", "typescript"],
-    "react": ["css"]
+    "java": ["spring-boot"],
+    "javascript": ["react", "typescript", "vue"],
+    "css": ["scss"],
+    "docker": ["kubernetes"],
+    "data-structures": ["algorithms"]
   }
 }

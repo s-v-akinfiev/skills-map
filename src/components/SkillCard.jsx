@@ -1,4 +1,4 @@
-import { getLevelMeta, getStatusMeta } from "../utils/presentation.js";
+import { getStatusMeta } from "../utils/presentation.js";
 
 function formatRelatedSkills(relatedSkills, skills) {
   return relatedSkills
@@ -17,31 +17,13 @@ export default function SkillCard({ selectedNodeId, skill, skills }) {
     );
   }
 
-  const levelMeta = getLevelMeta(skill.level);
   const statusMeta = getStatusMeta(skill.status);
 
   return (
     <article className={`skill-card ${skill.status === "future" ? "is-future" : ""}`}>
-      <header className="skill-card-header">
-        <div>
-          <p className="section-kicker">Skill details</p>
-          <h3>{skill.name}</h3>
-          <p className="detail-meta">
-            Icon: {skill.icon}
-            {typeof skill.years === "number" ? ` · ${skill.years} years` : ""}
-          </p>
-        </div>
-        <div className="badge-stack">
-          <span className={`level-pill ${levelMeta.className}`}>{levelMeta.label}</span>
-          <span className={`level-pill status-pill ${statusMeta.className}`}>
-            {statusMeta.label}
-          </span>
-        </div>
-      </header>
-
       <section className="skill-card-block">
         <h4>Summary</h4>
-        <p>{skill.summary}</p>
+        <p className="detail-copy">{skill.summary}</p>
       </section>
 
       <section className="skill-card-block">
@@ -58,24 +40,11 @@ export default function SkillCard({ selectedNodeId, skill, skills }) {
         </ul>
       </section>
 
-      <section className="skill-card-grid">
-        <div className="skill-card-block">
-          <h4>Tags</h4>
-          <div className="chip-row">
-            {skill.tags.map((tag) => (
-              <span className="chip" key={tag}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="skill-card-block">
-          <h4>Related skills</h4>
-          <p className="detail-copy">
-            {formatRelatedSkills(skill.relatedSkills, skills) || "None"}
-          </p>
-        </div>
+      <section className="skill-card-block">
+        <h4>Related skills</h4>
+        <p className="detail-copy">
+          {formatRelatedSkills(skill.relatedSkills, skills) || "None"}
+        </p>
       </section>
 
       <section className="skill-card-block">

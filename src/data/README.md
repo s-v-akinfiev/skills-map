@@ -18,7 +18,6 @@ Required fields for standard skill records:
 - `summary`
 - `details`
 - `highlights`
-- `tags`
 - `relatedSkills`
 
 Conditionally required:
@@ -68,4 +67,3 @@ The sample content is intentionally written in a CV-oriented voice:
 - summaries are concise and recruiter-readable
 - details emphasize delivery context and real-world responsibility
 - highlights capture high-signal achievements or ownership areas
-- tags are normalized to support filtering and related-skill linking

@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import SkillCard from "./components/SkillCard.jsx";
-import SkillTree from "./components/SkillTree.jsx";
+import SkillMap from "./components/SkillMap.jsx";
 import skills from "./data/skills.json";
 import tree from "./data/tree.json";
 import EditPanel from "./editor/EditPanel.jsx";
 import { EDIT_MODE } from "./config.js";
 import { exportJsonFile } from "./utils/exportJson.js";
 import { clearLocalDraft, loadLocalDraft, saveLocalDraft } from "./utils/localDraft.js";
-import { LEVEL_META } from "./utils/presentation.js";
+import { getLevelMeta, getStatusMeta, LEVEL_META } from "./utils/presentation.js";
+import { getSkillLogo } from "./utils/skillLogos.js";
 import {
   addSkillToData,
   cloneData,
@@ -45,6 +46,7 @@ export default function App() {
   const [selectedParentId, setSelectedParentId] = useState("");
   const [hasLocalDraft, setHasLocalDraft] = useState(false);
   const hasInitializedDraftPersistence = useRef(false);
+  const detailsShellRef = useRef(null);
   const [filters, setFilters] = useState({
     category: "all",
     level: "all",
@@ -52,6 +54,8 @@ export default function App() {
     futureOnly: false,
   });
   const [searchQuery, setSearchQuery] = useState("");
+  const [detailsObstructionRect, setDetailsObstructionRect] = useState(null);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -105,7 +109,6 @@ export default function App() {
   const visibleSkills = skillEntries.filter(([skillId, skill]) => {
     const matchesCategory =
       filters.category === "all" ||
-      skill.tags.includes(filters.category) ||
       data.tree.nodes[filters.category]?.includes(skillId);
     const matchesLevel = filters.level === "all" || skill.level === filters.level;
     const matchesStrong = !filters.strongOnly || skill.level === "STRONG";
@@ -128,6 +131,50 @@ export default function App() {
     data && selectedNodeId && data.skills[selectedNodeId]
       ? data.skills[selectedNodeId]
       : null;
+  const selectedSkillLevelMeta = selectedSkill ? getLevelMeta(selectedSkill.level) : null;
+  const selectedSkillStatusMeta = selectedSkill ? getStatusMeta(selectedSkill.status) : null;
+  const selectedSkillLogo = selectedSkill ? getSkillLogo(selectedSkill.icon) : null;
+
+  useEffect(() => {
+    if (!selectedSkill || !detailsShellRef.current) {
+      setDetailsObstructionRect(null);
+      return;
+    }
+
+    const detailsElement = detailsShellRef.current;
+    let frameId = 0;
+
+    function updateObstructionRect() {
+      const rect = detailsElement.getBoundingClientRect();
+
+      setDetailsObstructionRect({
+        bottom: rect.bottom,
+        left: rect.left,
+        right: rect.right,
+        top: rect.top,
+      });
+    }
+
+    updateObstructionRect();
+    frameId = window.requestAnimationFrame(updateObstructionRect);
+    window.addEventListener("resize", updateObstructionRect);
+
+    const resizeObserver =
+      typeof ResizeObserver === "undefined"
+        ? null
+        : new ResizeObserver(() => {
+            updateObstructionRect();
+          });
+
+    resizeObserver?.observe(detailsElement);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", updateObstructionRect);
+      resizeObserver?.disconnect();
+    };
+  }, [selectedSkill]);
+
   const visibleSkillIds = new Set(visibleSkills.map(([skillId]) => skillId));
   const currentParentId =
     data && selectedNodeId ? findParentIds(data.tree, selectedNodeId)[0] ?? "" : "";
@@ -234,7 +281,7 @@ export default function App() {
       updateSkillInData(current, selectedNodeId, (skill) => {
         const nextSkill = { ...skill };
 
-        if (field === "highlights" || field === "tags" || field === "relatedSkills") {
+        if (field === "highlights" || field === "relatedSkills") {
           nextSkill[field] = normalizeListInput(value);
           return nextSkill;
         }
@@ -273,7 +320,6 @@ export default function App() {
       summary: "Short summary",
       details: "Detailed description",
       highlights: ["First highlight"],
-      tags: ["custom"],
       relatedSkills: [],
     });
 
@@ -354,210 +400,223 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <header className="app-header">
-        <p className="eyebrow">Interactive Skills Map</p>
-        <h1>Skills Map</h1>
-        <p className="lede">
-          Structured CV-oriented skills explorer with local JSON data and
-          environment-gated edit mode.
-        </p>
-      </header>
-
-      <section className="toolbar panel">
-        <div className="toolbar-group">
-          <label className="field">
-            <span>Category</span>
-            <select
-              value={filters.category}
-              onChange={(event) => updateFilter("category", event.target.value)}
-            >
-              <option value="all">All categories</option>
-              {categoryOptions.map((option) => (
-                <option key={option.id} value={option.id}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="field">
-            <span>Level</span>
-            <select
-              value={filters.level}
-              onChange={(event) => updateFilter("level", event.target.value)}
-            >
-              <option value="all">All levels</option>
-              {Object.entries(LEVEL_META).map(([level, meta]) => (
-                <option key={level} value={level}>
-                  {meta.label}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="field field-search">
-            <span>Search</span>
-            <input
-              type="search"
-              value={searchQuery}
-              placeholder="Search by name"
-              onChange={(event) => setSearchQuery(event.target.value)}
+      {data ? (
+        <section className="map-shell map-shell-background">
+          <div className="map-canvas">
+            <SkillMap
+              expandedNodes={expandedNodes}
+              labels={data.tree.labels}
+              nodes={data.tree.nodes}
+              obstructionRect={detailsObstructionRect}
+              onSelect={setSelectedNodeId}
+              onToggle={toggleNode}
+              roots={data.tree.roots}
+              selectedNodeId={selectedNodeId}
+              skills={data.skills}
+              visibleSkillIds={visibleSkillIds}
             />
-          </label>
-        </div>
+          </div>
+        </section>
+      ) : null}
 
-        <div className="toolbar-group toolbar-group-actions">
-          <label className="toggle">
-            <input
-              type="checkbox"
-              checked={filters.strongOnly}
-              onChange={(event) => updateFilter("strongOnly", event.target.checked)}
-            />
-            <span>Strong only</span>
-          </label>
+      <div className="app-overlay">
+        <header className="app-header">
+          <p className="eyebrow">Serge Akinfiev | Skills Map</p>
+        </header>
 
-          <label className="toggle">
-            <input
-              type="checkbox"
-              checked={filters.futureOnly}
-              onChange={(event) => updateFilter("futureOnly", event.target.checked)}
-            />
-            <span>Future only</span>
-          </label>
+        <div className="toolbar-dock">
+          {isFilterOpen ? (
+            <section className="toolbar panel">
+              <div className="toolbar-group">
+                <label className="field">
+                  <span>Category</span>
+                  <select
+                    value={filters.category}
+                    onChange={(event) => updateFilter("category", event.target.value)}
+                  >
+                    <option value="all">All categories</option>
+                    {categoryOptions.map((option) => (
+                      <option key={option.id} value={option.id}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
 
-          <button className="ghost-button" type="button" onClick={resetFilters}>
-            Reset
+                <label className="field">
+                  <span>Level</span>
+                  <select
+                    value={filters.level}
+                    onChange={(event) => updateFilter("level", event.target.value)}
+                  >
+                    <option value="all">All levels</option>
+                    {Object.entries(LEVEL_META).map(([level, meta]) => (
+                      <option key={level} value={level}>
+                        {meta.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className="field field-search">
+                  <span>Search</span>
+                  <input
+                    type="search"
+                    value={searchQuery}
+                    placeholder="Search by name"
+                    onChange={(event) => setSearchQuery(event.target.value)}
+                  />
+                </label>
+              </div>
+
+              <div className="toolbar-group toolbar-group-actions">
+                <label className="toggle">
+                  <input
+                    type="checkbox"
+                    checked={filters.strongOnly}
+                    onChange={(event) => updateFilter("strongOnly", event.target.checked)}
+                  />
+                  <span>Strong only</span>
+                </label>
+
+                <label className="toggle">
+                  <input
+                    type="checkbox"
+                    checked={filters.futureOnly}
+                    onChange={(event) => updateFilter("futureOnly", event.target.checked)}
+                  />
+                  <span>Future only</span>
+                </label>
+
+                <button className="ghost-button" type="button" onClick={resetFilters}>
+                  Reset
+                </button>
+              </div>
+            </section>
+          ) : null}
+
+          <button
+            aria-expanded={isFilterOpen}
+            className="ghost-button filter-toggle"
+            type="button"
+            onClick={() => setIsFilterOpen((current) => !current)}
+          >
+            Filter
           </button>
         </div>
-      </section>
 
-      {bootError ? (
-        <section className="panel error-state" role="alert">
-          <h2>Unable to load data</h2>
-          <p>{bootError}</p>
-          <p>
-            Check the source JSON files or clear any invalid local draft data in
-            edit mode.
-          </p>
-        </section>
-      ) : !data ? (
-        <section className="panel empty-state">
-          <h2>Loading data</h2>
-          <p>The skills dataset is being loaded into the app state.</p>
-        </section>
-      ) : (
-        <>
-          {EDIT_MODE && hasLocalDraft ? (
-            <section className="panel draft-banner">
-              <h2>Local draft active</h2>
-              <p>
-                The current session is using a locally persisted draft instead of the
-                source JSON files. Clear the draft to return to the repository data.
-              </p>
-            </section>
-          ) : null}
-
-          {!validation.isValid ? (
-            <section className="panel validation-panel">
-              <h2>Data validation</h2>
-              <p>The current JSON data is invalid and should be fixed before feature work continues.</p>
-              <ul>
-                {validation.errors.map((error) => (
-                  <li key={error}>{error}</li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
-          {visibleSkills.length === 0 ? (
-            <section className="panel empty-state">
-              <h2>No matching skills</h2>
-              <p>The current filters and search query hide all loaded skills.</p>
-            </section>
-          ) : null}
-
-          <main className="app-layout">
-            <section className="panel tree-shell">
-              <div className="panel-heading">
-                <div>
-                  <p className="section-kicker">Left</p>
-                  <h2>Skill tree</h2>
-                </div>
-                <p className="panel-meta">
-                  {visibleSkills.length} visible / {skillEntries.length} total
+        {bootError ? (
+          <section className="panel error-state overlay-banner" role="alert">
+            <h2>Unable to load data</h2>
+            <p>{bootError}</p>
+            <p>
+              Check the source JSON files or clear any invalid local draft data in
+              edit mode.
+            </p>
+          </section>
+        ) : !data ? (
+          <section className="panel empty-state overlay-banner">
+            <h2>Loading data</h2>
+            <p>The skills dataset is being loaded into the app state.</p>
+          </section>
+        ) : (
+          <>
+            {EDIT_MODE && hasLocalDraft ? (
+              <section className="panel draft-banner overlay-banner">
+                <h2>Local draft active</h2>
+                <p>
+                  The current session is using a locally persisted draft instead of the
+                  source JSON files. Clear the draft to return to the repository data.
                 </p>
-              </div>
+              </section>
+            ) : null}
 
-              <div className="chip-row">
-                {categoryOptions.map((option) => (
-                  <span className="chip" key={option.id}>
-                    {option.label}
-                  </span>
-                ))}
-              </div>
+            {!validation.isValid ? (
+              <section className="panel validation-panel overlay-banner">
+                <h2>Data validation</h2>
+                <p>The current JSON data is invalid and should be fixed before feature work continues.</p>
+                <ul>
+                  {validation.errors.map((error) => (
+                    <li key={error}>{error}</li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
 
-              <p className="muted-text">
-                The tree reflects loaded JSON structure, preserves expand state,
-                and limits visible nodes to the current filters.
-              </p>
+            {visibleSkills.length === 0 ? (
+              <section className="panel empty-state overlay-banner">
+                <h2>No matching skills</h2>
+                <p>The current filters and search query hide all loaded skills.</p>
+              </section>
+            ) : null}
 
-              <p className="muted-text">
-                Parent branches remain visible when a child matches the current
-                search. Category nodes toggle branches; skill nodes open
-                details.
-              </p>
+            <main className="app-layout">
+              {selectedSkill ? (
+                <aside className="details-shell" ref={detailsShellRef}>
+                  <section className="panel details-panel">
+                    <div className="panel-heading">
+                      <div>
+                        <p className="section-kicker">Skill Details</p>
+                        <h2 className="details-title">
+                          {selectedSkillLogo ? (
+                            <img
+                              alt={`${selectedSkill.name} logo`}
+                              className="skill-logo skill-logo-title"
+                              src={selectedSkillLogo}
+                            />
+                          ) : null}
+                          <span>{selectedSkill.name}</span>
+                        </h2>
+                        <div className="badge-stack details-badge-stack">
+                          <span className={`level-pill ${selectedSkillLevelMeta.className}`}>
+                            {selectedSkillLevelMeta.label}
+                          </span>
+                          <span className={`level-pill status-pill ${selectedSkillStatusMeta.className}`}>
+                            {selectedSkillStatusMeta.label}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="details-actions">
+                        <button
+                          className="ghost-button details-close"
+                          type="button"
+                          onClick={() => setSelectedNodeId(null)}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
 
-              <SkillTree
-                expandedNodes={expandedNodes}
-                labels={data.tree.labels}
-                nodes={data.tree.nodes}
-                onSelect={setSelectedNodeId}
-                onToggle={toggleNode}
-                roots={data.tree.roots}
+                    <SkillCard
+                      selectedNodeId={selectedNodeId}
+                      skill={selectedSkill}
+                      skills={data.skills}
+                    />
+                  </section>
+                </aside>
+              ) : null}
+            </main>
+
+            {EDIT_MODE ? (
+              <EditPanel
+                hasLocalDraft={hasLocalDraft}
+                currentParentId={selectedParentId}
+                onClearDraft={handleClearDraft}
+                onAddSkill={handleAddSkill}
+                onDeleteSkill={handleDeleteSkill}
+                onExportSkills={handleExportSkills}
+                onExportTree={handleExportTree}
+                onFieldChange={updateSelectedSkillField}
+                onMoveNode={handleMoveNode}
+                onParentChange={handleParentChange}
+                parentOptions={parentOptions}
                 selectedNodeId={selectedNodeId}
-                skills={data.skills}
-                visibleSkillIds={visibleSkillIds}
+                selectedSkill={selectedSkill}
               />
-            </section>
-
-            <section className="panel details-shell">
-              <div className="panel-heading">
-                <div>
-                  <p className="section-kicker">Right</p>
-                  <h2>Skill details</h2>
-                </div>
-                <p className="panel-meta">
-                  Edit mode: <strong>{String(EDIT_MODE)}</strong>
-                </p>
-              </div>
-
-              <SkillCard
-                selectedNodeId={selectedNodeId}
-                skill={selectedSkill}
-                skills={data.skills}
-              />
-            </section>
-          </main>
-
-          {EDIT_MODE ? (
-            <EditPanel
-              hasLocalDraft={hasLocalDraft}
-              currentParentId={selectedParentId}
-              onClearDraft={handleClearDraft}
-              onAddSkill={handleAddSkill}
-              onDeleteSkill={handleDeleteSkill}
-              onExportSkills={handleExportSkills}
-              onExportTree={handleExportTree}
-              onFieldChange={updateSelectedSkillField}
-              onMoveNode={handleMoveNode}
-              onParentChange={handleParentChange}
-              parentOptions={parentOptions}
-              selectedNodeId={selectedNodeId}
-              selectedSkill={selectedSkill}
-            />
-          ) : null}
-        </>
-      )}
+            ) : null}
+          </>
+        )}
+      </div>
     </div>
   );
 }

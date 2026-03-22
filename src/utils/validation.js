@@ -31,7 +31,6 @@ function validateSkillRecord(skillId, skill, errors) {
     "summary",
     "details",
     "highlights",
-    "tags",
     "relatedSkills",
   ];
 
@@ -68,10 +67,6 @@ function validateSkillRecord(skillId, skill, errors) {
 
   if ("highlights" in skill && !Array.isArray(skill.highlights)) {
     pushError(errors, `Skill "${skillId}" field "highlights" must be an array.`);
-  }
-
-  if ("tags" in skill && !Array.isArray(skill.tags)) {
-    pushError(errors, `Skill "${skillId}" field "tags" must be an array.`);
   }
 
   if ("relatedSkills" in skill && !Array.isArray(skill.relatedSkills)) {
@@ -224,4 +219,3 @@ export function logValidationResults(result) {
   }
   console.groupEnd();
 }
-

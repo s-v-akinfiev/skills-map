@@ -26,7 +26,7 @@ export default function EditPanel({
           <p className="section-kicker">Local edit mode</p>
           <h2>Editor</h2>
         </div>
-        <p className="panel-meta">
+        <p className="muted-text">
           {hasLocalDraft ? "Draft restored from localStorage." : "Local-only controls are enabled."}
         </p>
       </div>
@@ -150,15 +150,6 @@ export default function EditPanel({
                   rows="3"
                   value={listValueToText(selectedSkill.highlights)}
                   onChange={(event) => onFieldChange("highlights", event.target.value)}
-                />
-              </label>
-
-              <label className="field">
-                <span>Tags (comma-separated)</span>
-                <input
-                  type="text"
-                  value={listValueToText(selectedSkill.tags)}
-                  onChange={(event) => onFieldChange("tags", event.target.value)}
                 />
               </label>
 
