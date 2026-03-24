@@ -13,31 +13,21 @@ Required fields for standard skill records:
 
 - `name`
 - `icon`
-- `level`
 - `status`
 - `summary`
 - `highlights`
 
 Conditionally required:
 
-- `years`: required for `current` and `learning` skills, omitted for `future` skills
+- `years`: required for all statuses except `PLANNED`
 
-## Supported Values
-
-Supported `level` values:
+## Supported Status Values
 
 - `STRONG`
 - `CONFIDENT`
-- `WORKING`
 - `BASIC`
 - `LEARNING`
 - `PLANNED`
-
-Supported `status` values:
-
-- `current`
-- `learning`
-- `future`
 
 ## ID Rules
 
@@ -48,9 +38,10 @@ Supported `status` values:
 
 The initial dataset includes examples for:
 
-- current skills
+- strong skills
+- confident skills
 - learning skills
-- future/planned skills
+- planned skills
 
 The sample content is intentionally written in a CV-oriented voice:
 

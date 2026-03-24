@@ -1,4 +1,4 @@
-import { getLevelMeta, getStatusMeta } from "../utils/presentation.js";
+import { getStatusMeta } from "../utils/presentation.js";
 
 function getNodeLabel(nodeId, skills, labels) {
   if (skills[nodeId]) {
@@ -38,9 +38,8 @@ export default function SkillNode({
   );
   const isExpanded = expandedNodes.includes(nodeId);
   const isSelected = selectedNodeId === nodeId;
-  const isFuture = skill?.status === "future";
+  const isFuture = skill?.status === "PLANNED";
   const isVisibleNode = skill ? visibleSkillIds.has(nodeId) : visibleChildren.length > 0;
-  const levelMeta = skill ? getLevelMeta(skill.level) : null;
   const statusMeta = skill ? getStatusMeta(skill.status) : null;
 
   if (!isVisibleNode) {
@@ -85,9 +84,6 @@ export default function SkillNode({
           <span>{getNodeLabel(nodeId, skills, labels)}</span>
           {skill ? (
             <span className="tree-badge-group">
-              <span className={`tree-badge ${levelMeta.className}`}>
-                {levelMeta.label}
-              </span>
               <span className={`tree-badge status-badge ${statusMeta.className}`}>
                 {statusMeta.label}
               </span>

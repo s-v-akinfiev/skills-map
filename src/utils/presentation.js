@@ -1,60 +1,35 @@
-export const LEVEL_META = {
+export const STATUS_META = {
   STRONG: {
     label: "Strong",
-    className: "level-strong",
+    className: "status-strong",
+    description: "Deep, production-tested capability used with high confidence.",
   },
   CONFIDENT: {
     label: "Confident",
-    className: "level-confident",
-  },
-  WORKING: {
-    label: "Working",
-    className: "level-working",
+    className: "status-confident",
+    description: "Reliable practical capability used comfortably in real work.",
   },
   BASIC: {
     label: "Basic",
-    className: "level-basic",
+    className: "status-basic",
+    description: "Foundational working knowledge with limited depth or breadth.",
   },
   LEARNING: {
     label: "Learning",
-    className: "level-learning",
+    className: "status-learning",
+    description: "In active growth with hands-on practice and exploration.",
   },
   PLANNED: {
     label: "Planned",
-    className: "level-planned",
+    className: "status-planned",
+    description: "Intended focus area, not yet part of hands-on experience.",
   },
 };
-
-export const STATUS_META = {
-  current: {
-    label: "Current",
-    className: "status-current",
-    description: "Actively used in current or recent production work.",
-  },
-  learning: {
-    label: "Learning",
-    className: "status-learning",
-    description: "In active growth with practical hands-on usage.",
-  },
-  future: {
-    label: "Future",
-    className: "status-future",
-    description: "Planned focus area, not yet counted as production experience.",
-  },
-};
-
-export function getLevelMeta(level) {
-  return LEVEL_META[level] ?? {
-    label: level,
-    className: "level-basic",
-  };
-}
 
 export function getStatusMeta(status) {
   return STATUS_META[status] ?? {
     label: status,
-    className: "status-current",
+    className: "status-basic",
     description: "",
   };
 }
-

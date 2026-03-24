@@ -9,7 +9,7 @@
 The system must:
 - Visualize skills as a tree (domains → technologies → capabilities)
 - Provide detailed descriptions per skill
-- Distinguish skill levels and maturity
+- Distinguish skill maturity with a single status tag
 - Support future/planned skills
 - Allow local editing and JSON export (no backend)
 
@@ -71,49 +71,29 @@ Displays:
 
 ---
 
-### 5.3 Skill Levels
+### 5.3 Skill Status
 
 Supported values:
 - STRONG
 - CONFIDENT
-- WORKING
 - BASIC
 - LEARNING
 - PLANNED
 
-Each level must have:
+Each status must have:
 - Color coding
 - Badge/label
 
----
-
-### 5.4 Skill Status
-
-Supported values:
-- current
-- learning
-- future
-
 Behavior:
-- future skills styled differently (e.g. dashed, faded)
-- no years required for future
+- planned skills styled differently (e.g. dashed, faded)
+- no years required for planned
 
 ---
 
-### 5.5 Future Skills
-
-Must support:
-- target description
-- visual differentiation
-
----
-
-### 5.6 Filters & Search
+### 5.4 Filters & Search
 
 - Filter by category
-- Filter by level
-- Show only strong skills
-- Show future skills
+- Filter by status
 - Search by name
 
 ---
@@ -161,8 +141,7 @@ Optional:
   "php": {
     "name": "PHP",
     "icon": "php",
-    "level": "STRONG",
-    "status": "current",
+    "status": "STRONG",
     "years": 10,
     "summary": "Main backend language",
     "highlights": ["Architecture", "Refactoring"],

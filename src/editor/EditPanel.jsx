@@ -1,4 +1,4 @@
-import { LEVEL_META, STATUS_META } from "../utils/presentation.js";
+import { STATUS_META } from "../utils/presentation.js";
 
 function listValueToText(value) {
   return value.join(", ");
@@ -87,20 +87,6 @@ export default function EditPanel({
               </label>
 
               <label className="field">
-                <span>Level</span>
-                <select
-                  value={selectedSkill.level}
-                  onChange={(event) => onFieldChange("level", event.target.value)}
-                >
-                  {Object.entries(LEVEL_META).map(([level, meta]) => (
-                    <option key={level} value={level}>
-                      {meta.label}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              <label className="field">
                 <span>Status</span>
                 <select
                   value={selectedSkill.status}
@@ -114,7 +100,7 @@ export default function EditPanel({
                 </select>
               </label>
 
-              {selectedSkill.status !== "future" ? (
+              {selectedSkill.status !== "PLANNED" ? (
                 <label className="field">
                   <span>Years</span>
                   <input

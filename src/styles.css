@@ -582,7 +582,7 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .detail-copy {
@@ -646,20 +646,18 @@ textarea:focus-visible {
   background: rgba(185, 28, 28, 0.22);
 }
 
-.level-strong {
+.status-strong {
   background: #dbe8f7;
   color: var(--heading);
 }
 
-.level-confident {
+.status-confident {
   background: #e7edf5;
   color: var(--heading);
 }
 
-.level-working,
-.level-basic,
-.level-learning,
-.level-planned {
+.status-basic,
+.status-learning {
   background: #eef2f7;
   color: var(--accent);
 }
@@ -668,17 +666,7 @@ textarea:focus-visible {
   border: 1px solid transparent;
 }
 
-.status-current {
-  background: #e5e7eb;
-  color: var(--text);
-}
-
-.status-learning {
-  background: #eef2f7;
-  color: var(--heading);
-}
-
-.status-future {
+.status-planned {
   background: #f3f4f6;
   color: var(--muted);
   border-style: dashed;

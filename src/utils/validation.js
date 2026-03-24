@@ -1,13 +1,10 @@
-const VALID_LEVELS = new Set([
+const VALID_STATUSES = new Set([
   "STRONG",
   "CONFIDENT",
-  "WORKING",
   "BASIC",
   "LEARNING",
   "PLANNED",
 ]);
-
-const VALID_STATUSES = new Set(["current", "learning", "future"]);
 
 function isObjectRecord(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -26,7 +23,6 @@ function validateSkillRecord(skillId, skill, errors) {
   const requiredFields = [
     "name",
     "icon",
-    "level",
     "status",
     "summary",
     "highlights",
@@ -38,13 +34,6 @@ function validateSkillRecord(skillId, skill, errors) {
     }
   }
 
-  if (typeof skill.level !== "string" || !VALID_LEVELS.has(skill.level)) {
-    pushError(
-      errors,
-      `Skill "${skillId}" has invalid level "${String(skill.level)}".`,
-    );
-  }
-
   if (typeof skill.status !== "string" || !VALID_STATUSES.has(skill.status)) {
     pushError(
       errors,
@@ -52,11 +41,11 @@ function validateSkillRecord(skillId, skill, errors) {
     );
   }
 
-  if (skill.status === "future" && "years" in skill) {
-    pushError(errors, `Skill "${skillId}" must not define "years" for future status.`);
+  if (skill.status === "PLANNED" && "years" in skill) {
+    pushError(errors, `Skill "${skillId}" must not define "years" for planned status.`);
   }
 
-  if (skill.status !== "future" && typeof skill.years !== "number") {
+  if (skill.status !== "PLANNED" && typeof skill.years !== "number") {
     pushError(
       errors,
       `Skill "${skillId}" must define numeric "years" for status "${skill.status}".`,

@@ -7,7 +7,7 @@ import EditPanel from "./editor/EditPanel.jsx";
 import { EDIT_MODE } from "./config.js";
 import { exportJsonFile } from "./utils/exportJson.js";
 import { clearLocalDraft, loadLocalDraft, saveLocalDraft } from "./utils/localDraft.js";
-import { getLevelMeta, getStatusMeta, LEVEL_META } from "./utils/presentation.js";
+import { getStatusMeta, STATUS_META } from "./utils/presentation.js";
 import { getSkillLogo } from "./utils/skillLogos.js";
 import {
   addSkillToData,
@@ -49,9 +49,7 @@ export default function App() {
   const detailsShellRef = useRef(null);
   const [filters, setFilters] = useState({
     category: "all",
-    level: "all",
-    strongOnly: false,
-    futureOnly: false,
+    status: "all",
   });
   const [searchQuery, setSearchQuery] = useState("");
   const [detailsObstructionRect, setDetailsObstructionRect] = useState(null);
@@ -110,9 +108,7 @@ export default function App() {
     const matchesCategory =
       filters.category === "all" ||
       data.tree.nodes[filters.category]?.includes(skillId);
-    const matchesLevel = filters.level === "all" || skill.level === filters.level;
-    const matchesStrong = !filters.strongOnly || skill.level === "STRONG";
-    const matchesFuture = !filters.futureOnly || skill.status === "future";
+    const matchesStatus = filters.status === "all" || skill.status === filters.status;
     const normalizedQuery = searchQuery.trim().toLowerCase();
     const matchesSearch =
       normalizedQuery.length === 0 ||
@@ -120,9 +116,7 @@ export default function App() {
 
     return (
       matchesCategory &&
-      matchesLevel &&
-      matchesStrong &&
-      matchesFuture &&
+      matchesStatus &&
       matchesSearch
     );
   });
@@ -131,7 +125,6 @@ export default function App() {
     data && selectedNodeId && data.skills[selectedNodeId]
       ? data.skills[selectedNodeId]
       : null;
-  const selectedSkillLevelMeta = selectedSkill ? getLevelMeta(selectedSkill.level) : null;
   const selectedSkillStatusMeta = selectedSkill ? getStatusMeta(selectedSkill.status) : null;
   const selectedSkillLogo = selectedSkill ? getSkillLogo(selectedSkill.icon) : null;
 
@@ -257,9 +250,7 @@ export default function App() {
   function resetFilters() {
     setFilters({
       category: "all",
-      level: "all",
-      strongOnly: false,
-      futureOnly: false,
+      status: "all",
     });
     setSearchQuery("");
   }
@@ -289,7 +280,7 @@ export default function App() {
         if (field === "status") {
           nextSkill.status = value;
 
-          if (value === "future") {
+          if (value === "PLANNED") {
             delete nextSkill.years;
           } else if (typeof nextSkill.years !== "number") {
             nextSkill.years = 0;
@@ -314,8 +305,7 @@ export default function App() {
     const nextData = addSkillToData(data, newSkillId, parentId, {
       name: "New Skill",
       icon: "spark",
-      level: "BASIC",
-      status: "learning",
+      status: "BASIC",
       years: 0,
       summary: "Short summary",
       highlights: ["First highlight"],
@@ -442,14 +432,14 @@ export default function App() {
                 </label>
 
                 <label className="field">
-                  <span>Level</span>
+                  <span>Status</span>
                   <select
-                    value={filters.level}
-                    onChange={(event) => updateFilter("level", event.target.value)}
+                    value={filters.status}
+                    onChange={(event) => updateFilter("status", event.target.value)}
                   >
-                    <option value="all">All levels</option>
-                    {Object.entries(LEVEL_META).map(([level, meta]) => (
-                      <option key={level} value={level}>
+                    <option value="all">All statuses</option>
+                    {Object.entries(STATUS_META).map(([status, meta]) => (
+                      <option key={status} value={status}>
                         {meta.label}
                       </option>
                     ))}
@@ -466,26 +456,7 @@ export default function App() {
                   />
                 </label>
               </div>
-
               <div className="toolbar-group toolbar-group-actions">
-                <label className="toggle">
-                  <input
-                    type="checkbox"
-                    checked={filters.strongOnly}
-                    onChange={(event) => updateFilter("strongOnly", event.target.checked)}
-                  />
-                  <span>Strong only</span>
-                </label>
-
-                <label className="toggle">
-                  <input
-                    type="checkbox"
-                    checked={filters.futureOnly}
-                    onChange={(event) => updateFilter("futureOnly", event.target.checked)}
-                  />
-                  <span>Future only</span>
-                </label>
-
                 <button className="ghost-button" type="button" onClick={resetFilters}>
                   Reset
                 </button>
@@ -566,9 +537,6 @@ export default function App() {
                           <span>{selectedSkill.name}</span>
                         </h2>
                         <div className="badge-stack details-badge-stack">
-                          <span className={`level-pill ${selectedSkillLevelMeta.className}`}>
-                            {selectedSkillLevelMeta.label}
-                          </span>
                           <span className={`level-pill status-pill ${selectedSkillStatusMeta.className}`}>
                             {selectedSkillStatusMeta.label}
                           </span>

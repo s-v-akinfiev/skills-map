@@ -2,8 +2,7 @@
   "php": {
     "name": "PHP",
     "icon": "php",
-    "level": "STRONG",
-    "status": "current",
+    "status": "STRONG",
     "years": 10,
     "summary": "Primary backend language across most long-lived production work.",
     "highlights": [
@@ -15,8 +14,7 @@
   "symfony": {
     "name": "Symfony",
     "icon": "symfony",
-    "level": "STRONG",
-    "status": "current",
+    "status": "STRONG",
     "years": 7,
     "summary": "Main framework for structured, maintainable backend application design.",
     "highlights": [
@@ -28,8 +26,7 @@
   "mysql": {
     "name": "MySQL",
     "icon": "mysql",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 8,
     "summary": "Relational database work for production applications and internal systems.",
     "highlights": [
@@ -41,8 +38,7 @@
   "java": {
     "name": "Java",
     "icon": "java",
-    "level": "BASIC",
-    "status": "learning",
+    "status": "LEARNING",
     "years": 1,
     "summary": "Secondary backend language used to widen platform and ecosystem range.",
     "highlights": [
@@ -54,8 +50,7 @@
   "spring-boot": {
     "name": "Spring Boot",
     "icon": "spring-boot",
-    "level": "BASIC",
-    "status": "learning",
+    "status": "LEARNING",
     "years": 1,
     "summary": "Framework exploration for opinionated Java service development.",
     "highlights": [
@@ -67,8 +62,7 @@
   "rabbitmq": {
     "name": "RabbitMQ",
     "icon": "rabbitmq",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 2,
     "summary": "Message broker knowledge used for asynchronous workflows and decoupled processing.",
     "highlights": [
@@ -80,8 +74,7 @@
   "redis": {
     "name": "Redis",
     "icon": "redis",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 3,
     "summary": "In-memory data store used for caching, transient state, and responsiveness improvements.",
     "highlights": [
@@ -93,8 +86,7 @@
   "n8n": {
     "name": "n8n",
     "icon": "n8n",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 1,
     "summary": "Automation tooling for pragmatic workflow orchestration and integrations.",
     "highlights": [
@@ -106,8 +98,7 @@
   "javascript": {
     "name": "JavaScript",
     "icon": "javascript",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 6,
     "summary": "General-purpose frontend and tooling language used across multiple project types.",
     "highlights": [
@@ -119,8 +110,7 @@
   "html": {
     "name": "HTML",
     "icon": "html",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 6,
     "summary": "Markup foundation for frontend structure, semantics, and accessible content layout.",
     "highlights": [
@@ -132,8 +122,7 @@
   "react": {
     "name": "React",
     "icon": "react",
-    "level": "WORKING",
-    "status": "learning",
+    "status": "LEARNING",
     "years": 2,
     "summary": "Component-based frontend work with a focus on maintainable interactive UIs.",
     "highlights": [
@@ -145,8 +134,7 @@
   "vue": {
     "name": "Vue",
     "icon": "vue",
-    "level": "BASIC",
-    "status": "learning",
+    "status": "LEARNING",
     "years": 1,
     "summary": "Secondary frontend framework explored for a broader UI toolkit perspective.",
     "highlights": [
@@ -158,8 +146,7 @@
   "typescript": {
     "name": "TypeScript",
     "icon": "typescript",
-    "level": "WORKING",
-    "status": "learning",
+    "status": "LEARNING",
     "years": 2,
     "summary": "Typed JavaScript used to improve safety and maintainability in frontend code.",
     "highlights": [
@@ -171,8 +158,7 @@
   "css": {
     "name": "CSS",
     "icon": "css",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 6,
     "summary": "Styling work for product interfaces, admin tools, and internal applications.",
     "highlights": [
@@ -184,8 +170,7 @@
   "scss": {
     "name": "SCSS",
     "icon": "scss",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 5,
     "summary": "Structured CSS authoring for larger stylesheets and reusable design patterns.",
     "highlights": [
@@ -197,8 +182,7 @@
   "git": {
     "name": "Git",
     "icon": "git",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 6,
     "summary": "Version control used daily for collaboration, review, and controlled change management.",
     "highlights": [
@@ -210,8 +194,7 @@
   "webpack": {
     "name": "Webpack",
     "icon": "webpack",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 3,
     "summary": "Bundling and build-pipeline experience for frontend delivery workflows.",
     "highlights": [
@@ -223,8 +206,7 @@
   "docker": {
     "name": "Docker",
     "icon": "docker",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 3,
     "summary": "Container-based workflows for consistent local setup and deployment packaging.",
     "highlights": [
@@ -236,8 +218,7 @@
   "linux": {
     "name": "Linux",
     "icon": "linux",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 4,
     "summary": "Daily operating environment for backend work, tooling, and production-oriented tasks.",
     "highlights": [
@@ -249,8 +230,7 @@
   "new-relic": {
     "name": "New Relic",
     "icon": "new-relic",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 2,
     "summary": "Observability tooling used for application monitoring and production investigation.",
     "highlights": [
@@ -262,8 +242,7 @@
   "chatgpt": {
     "name": "ChatGPT",
     "icon": "chatgpt",
-    "level": "WORKING",
-    "status": "current",
+    "status": "BASIC",
     "years": 2,
     "summary": "AI-assisted workflow support for drafting, research acceleration, and implementation throughput.",
     "highlights": [
@@ -275,8 +254,7 @@
   "data-structures": {
     "name": "Data Structures",
     "icon": "data-structures",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 6,
     "summary": "Core computer science foundation used to reason about implementation tradeoffs and complexity.",
     "highlights": [
@@ -288,8 +266,7 @@
   "algorithms": {
     "name": "Algorithms",
     "icon": "algorithms",
-    "level": "CONFIDENT",
-    "status": "current",
+    "status": "CONFIDENT",
     "years": 6,
     "summary": "Problem-solving foundation used to reason about tradeoffs, efficiency, and implementation approach.",
     "highlights": [
@@ -301,8 +278,7 @@
   "go": {
     "name": "Go",
     "icon": "go",
-    "level": "PLANNED",
-    "status": "future",
+    "status": "PLANNED",
     "summary": "Planned backend language for simpler services and stronger systems-level breadth.",
     "highlights": [
       "Evaluate fit for small backend services and tooling",
@@ -313,8 +289,7 @@
   "kubernetes": {
     "name": "Kubernetes",
     "icon": "kubernetes",
-    "level": "PLANNED",
-    "status": "future",
+    "status": "PLANNED",
     "summary": "Planned infrastructure skill for stronger deployment and platform understanding.",
     "highlights": [
       "Learn the operational model behind orchestrated services",

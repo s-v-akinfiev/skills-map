@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getLevelMeta, getStatusMeta } from "../utils/presentation.js";
+import { getStatusMeta } from "../utils/presentation.js";
 import { getSkillLogo } from "../utils/skillLogos.js";
 
 const PLANE_WIDTH = 2400;
@@ -64,7 +64,6 @@ function SkillMapBranch({
   const isExpanded = expandedNodes.includes(nodeId);
   const isSelected = selectedNodeId === nodeId;
   const isVisibleNode = skill ? visibleSkillIds.has(nodeId) : visibleChildren.length > 0;
-  const levelMeta = skill ? getLevelMeta(skill.level) : null;
   const statusMeta = skill ? getStatusMeta(skill.status) : null;
   const skillLogo = skill ? getSkillLogo(skill.icon) : null;
 
@@ -104,7 +103,6 @@ function SkillMapBranch({
         </span>
         {skill ? (
           <span className="map-node-meta">
-            <span className={`tree-badge ${levelMeta.className}`}>{levelMeta.label}</span>
             <span className={`tree-badge status-pill ${statusMeta.className}`}>
               {statusMeta.label}
             </span>

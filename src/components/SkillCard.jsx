@@ -13,7 +13,7 @@ export default function SkillCard({ selectedNodeId, skill }) {
   const statusMeta = getStatusMeta(skill.status);
 
   return (
-    <article className={`skill-card ${skill.status === "future" ? "is-future" : ""}`}>
+    <article className={`skill-card ${skill.status === "PLANNED" ? "is-future" : ""}`}>
       <section className="skill-card-block">
         <h4>Summary</h4>
         <p className="detail-copy">{skill.summary}</p>
