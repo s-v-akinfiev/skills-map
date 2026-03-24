@@ -38,6 +38,10 @@ function buildNewSkillId(existingIds) {
   return `skill-${index}`;
 }
 
+function getExpandedNodeIds(tree) {
+  return Object.keys(tree.nodes ?? {});
+}
+
 export default function App() {
   const [data, setData] = useState(null);
   const [bootError, setBootError] = useState("");
@@ -65,7 +69,7 @@ export default function App() {
       const nextData = draftData ?? initialData;
 
       setData(nextData);
-      setExpandedNodes(nextData.tree.roots);
+      setExpandedNodes(getExpandedNodeIds(nextData.tree));
       setHasLocalDraft(Boolean(draftData));
       setBootError("");
     } catch (error) {
@@ -373,7 +377,7 @@ export default function App() {
       });
 
       setData(initialData);
-      setExpandedNodes(initialData.tree.roots);
+      setExpandedNodes(getExpandedNodeIds(initialData.tree));
       setSelectedNodeId(null);
       setHasLocalDraft(false);
       setBootError("");
