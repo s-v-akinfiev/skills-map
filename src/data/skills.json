@@ -308,9 +308,7 @@
       "Evaluate fit for small backend services and tooling",
       "Learn idiomatic concurrency and deployment patterns",
       "Broaden backend perspective beyond the current main stack"
-    ],
-    "targetDescription": "Build one small production-style service and one CLI tool.",
-    "motivation": "Expand backend range beyond the current primary stack."
+    ]
   },
   "kubernetes": {
     "name": "Kubernetes",
@@ -322,8 +320,6 @@
       "Learn the operational model behind orchestrated services",
       "Understand deployment and rollout mechanics more deeply",
       "Improve fluency at the application-platform boundary"
-    ],
-    "targetDescription": "Deploy a small service stack with observable rollout and rollback flow.",
-    "motivation": "Strengthen infrastructure awareness beyond application code."
+    ]
   }
 }

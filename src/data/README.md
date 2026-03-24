@@ -22,11 +22,6 @@ Conditionally required:
 
 - `years`: required for `current` and `learning` skills, omitted for `future` skills
 
-Optional fields:
-
-- `targetDescription`: used for future/planned skills
-- `motivation`: used for future/planned skills
-
 ## Supported Values
 
 Supported `level` values:

@@ -104,7 +104,6 @@ Behavior:
 
 Must support:
 - target description
-- reason / motivation
 - visual differentiation
 
 ---

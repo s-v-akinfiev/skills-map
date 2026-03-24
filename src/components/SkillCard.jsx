@@ -35,19 +35,6 @@ export default function SkillCard({ selectedNodeId, skill }) {
         </p>
       </section>
 
-      {skill.status === "future" ? (
-        <section className="skill-card-grid">
-          <div className="skill-card-block">
-            <h4>Target</h4>
-            <p className="detail-copy">{skill.targetDescription ?? "Not specified."}</p>
-          </div>
-
-          <div className="skill-card-block">
-            <h4>Motivation</h4>
-            <p className="detail-copy">{skill.motivation ?? "Not specified."}</p>
-          </div>
-        </section>
-      ) : null}
     </article>
   );
 }

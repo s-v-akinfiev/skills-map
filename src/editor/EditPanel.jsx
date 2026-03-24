@@ -144,30 +144,6 @@ export default function EditPanel({
                 />
               </label>
 
-              {selectedSkill.status === "future" ? (
-                <>
-                  <label className="field field-full">
-                    <span>Target description</span>
-                    <textarea
-                      rows="2"
-                      value={selectedSkill.targetDescription ?? ""}
-                      onChange={(event) =>
-                        onFieldChange("targetDescription", event.target.value)
-                      }
-                    />
-                  </label>
-
-                  <label className="field field-full">
-                    <span>Motivation</span>
-                    <textarea
-                      rows="2"
-                      value={selectedSkill.motivation ?? ""}
-                      onChange={(event) => onFieldChange("motivation", event.target.value)}
-                    />
-                  </label>
-                </>
-              ) : null}
-
               <label className="field">
                 <span>Parent node</span>
                 <select
