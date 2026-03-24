@@ -318,7 +318,6 @@ export default function App() {
       status: "learning",
       years: 0,
       summary: "Short summary",
-      details: "Detailed description",
       highlights: ["First highlight"],
     });
 

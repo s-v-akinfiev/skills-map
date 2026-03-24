@@ -29,7 +29,6 @@ function validateSkillRecord(skillId, skill, errors) {
     "level",
     "status",
     "summary",
-    "details",
     "highlights",
   ];
 
@@ -67,7 +66,6 @@ function validateSkillRecord(skillId, skill, errors) {
   if ("highlights" in skill && !Array.isArray(skill.highlights)) {
     pushError(errors, `Skill "${skillId}" field "highlights" must be an array.`);
   }
-
 }
 
 function validateTreeNodeList(nodeId, childIds, errors) {

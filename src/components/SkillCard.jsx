@@ -20,11 +20,6 @@ export default function SkillCard({ selectedNodeId, skill }) {
       </section>
 
       <section className="skill-card-block">
-        <h4>Description</h4>
-        <p className="detail-copy">{skill.details}</p>
-      </section>
-
-      <section className="skill-card-block">
         <h4>Highlights</h4>
         <ul>
           {skill.highlights.map((item) => (

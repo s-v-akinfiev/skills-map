@@ -136,15 +136,6 @@ export default function EditPanel({
               </label>
 
               <label className="field field-full">
-                <span>Details</span>
-                <textarea
-                  rows="4"
-                  value={selectedSkill.details}
-                  onChange={(event) => onFieldChange("details", event.target.value)}
-                />
-              </label>
-
-              <label className="field field-full">
                 <span>Highlights (comma-separated)</span>
                 <textarea
                   rows="3"

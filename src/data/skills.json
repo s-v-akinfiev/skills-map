@@ -6,7 +6,6 @@
     "status": "current",
     "years": 10,
     "summary": "Primary backend language across most long-lived production work.",
-    "details": "Used as the main delivery language for business-critical backend systems, internal platforms, third-party integrations, and ongoing modernization work in mature codebases.",
     "highlights": [
       "Designed and evolved backend architecture in production environments",
       "Led legacy cleanup and incremental refactoring work",
@@ -20,7 +19,6 @@
     "status": "current",
     "years": 7,
     "summary": "Main framework for structured, maintainable backend application design.",
-    "details": "Used to organize large codebases around explicit services, messaging, CLI tooling, reusable modules, and predictable engineering workflows.",
     "highlights": [
       "Strong use of dependency injection and service boundaries",
       "Built operational and developer-facing console tooling",
@@ -34,7 +32,6 @@
     "status": "current",
     "years": 8,
     "summary": "Relational database work for production applications and internal systems.",
-    "details": "Used for schema design, query tuning, migrations, reporting support, and investigation of data-related production issues in backend-heavy products.",
     "highlights": [
       "Handled schema evolution in long-running projects",
       "Analyzed and improved slow or complex queries",
@@ -48,7 +45,6 @@
     "status": "learning",
     "years": 1,
     "summary": "Secondary backend language used to widen platform and ecosystem range.",
-    "details": "Used for exploratory backend work and comparison with the current primary stack, especially around typed service design and JVM conventions.",
     "highlights": [
       "Explored typed backend workflows beyond the current main stack",
       "Compared Java service structure with PHP and Go tradeoffs",
@@ -62,7 +58,6 @@
     "status": "learning",
     "years": 1,
     "summary": "Framework exploration for opinionated Java service development.",
-    "details": "Used to understand how convention-driven Java services are assembled around dependency injection, configuration, packaging, and operational defaults.",
     "highlights": [
       "Learned core service bootstrapping patterns in the Spring ecosystem",
       "Compared framework conventions against Symfony-style service design",
@@ -76,7 +71,6 @@
     "status": "current",
     "years": 2,
     "summary": "Message broker knowledge used for asynchronous workflows and decoupled processing.",
-    "details": "Applied in integration-heavy flows where queue-backed delivery, retries, and asynchronous processing improved resilience and delivery separation.",
     "highlights": [
       "Worked with queue-driven task processing",
       "Used asynchronous flow design to decouple service responsibilities",
@@ -90,7 +84,6 @@
     "status": "current",
     "years": 3,
     "summary": "In-memory data store used for caching, transient state, and responsiveness improvements.",
-    "details": "Used where short-lived data, caching, or lightweight coordination improved application responsiveness and reduced repetitive backend load.",
     "highlights": [
       "Applied caching to reduce repeated expensive work",
       "Used fast transient storage in backend-heavy applications",
@@ -104,7 +97,6 @@
     "status": "current",
     "years": 1,
     "summary": "Automation tooling for pragmatic workflow orchestration and integrations.",
-    "details": "Used to connect systems quickly, automate repeatable steps, and reduce manual coordination where lightweight orchestration was enough.",
     "highlights": [
       "Built practical automation around integrations and internal workflows",
       "Reduced repetitive manual steps with low-friction orchestration",
@@ -118,7 +110,6 @@
     "status": "current",
     "years": 6,
     "summary": "General-purpose frontend and tooling language used across multiple project types.",
-    "details": "Used for browser-side interactions, UI enhancements, build and automation tasks, and cross-stack work where frontend and backend concerns meet.",
     "highlights": [
       "Built interactive UI behavior for product interfaces",
       "Used scripting to support delivery and tooling tasks",
@@ -132,7 +123,6 @@
     "status": "current",
     "years": 6,
     "summary": "Markup foundation for frontend structure, semantics, and accessible content layout.",
-    "details": "Used to structure product interfaces, template-driven pages, and component output with attention to semantics, readability, and maintainability.",
     "highlights": [
       "Built semantic interface structure for practical product UIs",
       "Worked across template and component-driven frontend output",
@@ -146,7 +136,6 @@
     "status": "learning",
     "years": 2,
     "summary": "Component-based frontend work with a focus on maintainable interactive UIs.",
-    "details": "Used for building stateful interfaces, reusable UI components, and small apps where local interaction quality and structure matter.",
     "highlights": [
       "Built component-driven screens and reusable UI pieces",
       "Worked with local state and interactive page flows",
@@ -160,7 +149,6 @@
     "status": "learning",
     "years": 1,
     "summary": "Secondary frontend framework explored for a broader UI toolkit perspective.",
-    "details": "Used to understand another component model, compare ergonomics against React, and build range across modern frontend approaches.",
     "highlights": [
       "Compared framework ergonomics across modern frontend stacks",
       "Built familiarity with Vue component and template conventions",
@@ -174,7 +162,6 @@
     "status": "learning",
     "years": 2,
     "summary": "Typed JavaScript used to improve safety and maintainability in frontend code.",
-    "details": "Used to improve refactoring confidence, clarify component contracts, and reduce ambiguity when frontend code grows beyond small scripts.",
     "highlights": [
       "Used types to tighten component and data contracts",
       "Improved refactoring safety in UI code",
@@ -188,7 +175,6 @@
     "status": "current",
     "years": 6,
     "summary": "Styling work for product interfaces, admin tools, and internal applications.",
-    "details": "Used to build responsive layouts, improve information hierarchy, and turn functional UI into clearer and more usable interfaces.",
     "highlights": [
       "Implemented responsive layouts for practical product screens",
       "Improved readability and interaction clarity in existing UIs",
@@ -202,7 +188,6 @@
     "status": "current",
     "years": 5,
     "summary": "Structured CSS authoring for larger stylesheets and reusable design patterns.",
-    "details": "Used where nesting, variables, partials, and stronger stylesheet organization helped maintain larger frontend surfaces over time.",
     "highlights": [
       "Organized larger stylesheets into maintainable structures",
       "Used variables and partials to reduce duplication",
@@ -216,7 +201,6 @@
     "status": "current",
     "years": 6,
     "summary": "Version control used daily for collaboration, review, and controlled change management.",
-    "details": "Used across feature delivery, debugging, branch-based collaboration, release preparation, and disciplined incremental change workflows.",
     "highlights": [
       "Worked comfortably with branch-based team delivery workflows",
       "Used history and diffs for debugging and review",
@@ -230,7 +214,6 @@
     "status": "current",
     "years": 3,
     "summary": "Bundling and build-pipeline experience for frontend delivery workflows.",
-    "details": "Used to assemble frontend assets, support multi-step build flows, and understand how tooling shapes application delivery and maintainability.",
     "highlights": [
       "Worked with asset bundling and build configuration",
       "Used tooling knowledge to support frontend delivery pipelines",
@@ -244,7 +227,6 @@
     "status": "current",
     "years": 3,
     "summary": "Container-based workflows for consistent local setup and deployment packaging.",
-    "details": "Used to standardize development environments, package services, and reduce environmental drift between local and deployed systems.",
     "highlights": [
       "Used containers to make service setup more repeatable",
       "Improved consistency across development and deployment workflows",
@@ -258,7 +240,6 @@
     "status": "current",
     "years": 4,
     "summary": "Daily operating environment for backend work, tooling, and production-oriented tasks.",
-    "details": "Used as the practical base for development, debugging, automation, and server-adjacent work where command-line fluency matters.",
     "highlights": [
       "Worked comfortably in command-line driven development workflows",
       "Used Linux environments for backend and tooling tasks",
@@ -272,7 +253,6 @@
     "status": "current",
     "years": 2,
     "summary": "Observability tooling used for application monitoring and production investigation.",
-    "details": "Used to inspect runtime behavior, investigate incidents, and connect performance signals back to application-level issues and changes.",
     "highlights": [
       "Used monitoring data to investigate production behavior",
       "Connected performance symptoms with code and infrastructure concerns",
@@ -286,7 +266,6 @@
     "status": "current",
     "years": 2,
     "summary": "AI-assisted workflow support for drafting, research acceleration, and implementation throughput.",
-    "details": "Used pragmatically to speed up exploration, draft technical options, refine code, and compress repetitive research or writing-heavy tasks.",
     "highlights": [
       "Used AI assistance to accelerate drafting and exploration",
       "Improved throughput on repetitive research and implementation tasks",
@@ -300,7 +279,6 @@
     "status": "current",
     "years": 6,
     "summary": "Core computer science foundation used to reason about implementation tradeoffs and complexity.",
-    "details": "Applied as practical engineering judgment when choosing representations, reviewing code paths, and assessing efficiency or maintainability tradeoffs.",
     "highlights": [
       "Used structural reasoning to make implementation choices clearer",
       "Applied complexity awareness in practical coding decisions",
@@ -314,7 +292,6 @@
     "status": "current",
     "years": 6,
     "summary": "Problem-solving foundation used to reason about tradeoffs, efficiency, and implementation approach.",
-    "details": "Applied in day-to-day engineering work when comparing solution paths, simplifying code flows, and choosing approaches that balance clarity, performance, and maintainability.",
     "highlights": [
       "Used algorithmic reasoning to compare implementation options",
       "Applied complexity awareness when evaluating hot paths and edge cases",
@@ -327,7 +304,6 @@
     "level": "PLANNED",
     "status": "future",
     "summary": "Planned backend language for simpler services and stronger systems-level breadth.",
-    "details": "Target skill for exploring lean service design, concurrency patterns, CLI tooling, and a different set of tradeoffs from the current primary stack.",
     "highlights": [
       "Evaluate fit for small backend services and tooling",
       "Learn idiomatic concurrency and deployment patterns",
@@ -342,7 +318,6 @@
     "level": "PLANNED",
     "status": "future",
     "summary": "Planned infrastructure skill for stronger deployment and platform understanding.",
-    "details": "Target skill for understanding container orchestration, deployment workflows, and how application concerns connect to platform-level reliability and operations.",
     "highlights": [
       "Learn the operational model behind orchestrated services",
       "Understand deployment and rollout mechanics more deeply",

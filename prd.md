@@ -66,7 +66,6 @@ Displays:
 - Level
 - Years of experience
 - Summary
-- Detailed description
 - Highlights (bullet points)
 - Tags
 
@@ -167,7 +166,6 @@ Optional:
     "status": "current",
     "years": 10,
     "summary": "Main backend language",
-    "details": "Used in large-scale production systems...",
     "highlights": ["Architecture", "Refactoring"],
     "tags": ["backend"]
   }

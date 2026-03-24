@@ -16,7 +16,6 @@ Required fields for standard skill records:
 - `level`
 - `status`
 - `summary`
-- `details`
 - `highlights`
 
 Conditionally required:
@@ -62,5 +61,4 @@ The sample content is intentionally written in a CV-oriented voice:
 
 - category labels reflect engineering scope rather than generic buckets
 - summaries are concise and recruiter-readable
-- details emphasize delivery context and real-world responsibility
 - highlights capture high-signal achievements or ownership areas
