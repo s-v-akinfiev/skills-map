@@ -1,13 +1,6 @@
 import { getStatusMeta } from "../utils/presentation.js";
 
-function formatRelatedSkills(relatedSkills, skills) {
-  return relatedSkills
-    .map((skillId) => skills[skillId]?.name)
-    .filter(Boolean)
-    .join(", ");
-}
-
-export default function SkillCard({ selectedNodeId, skill, skills }) {
+export default function SkillCard({ selectedNodeId, skill }) {
   if (!selectedNodeId || !skill) {
     return (
       <div className="empty-state-inline">
@@ -38,13 +31,6 @@ export default function SkillCard({ selectedNodeId, skill, skills }) {
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </section>
-
-      <section className="skill-card-block">
-        <h4>Related skills</h4>
-        <p className="detail-copy">
-          {formatRelatedSkills(skill.relatedSkills, skills) || "None"}
-        </p>
       </section>
 
       <section className="skill-card-block">

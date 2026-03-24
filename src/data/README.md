@@ -18,7 +18,6 @@ Required fields for standard skill records:
 - `summary`
 - `details`
 - `highlights`
-- `relatedSkills`
 
 Conditionally required:
 
@@ -51,8 +50,6 @@ Supported `status` values:
 - Skill IDs are the top-level keys in `skills.json`.
 - Skill IDs referenced in `tree.json` children should exist in `skills.json`.
 - Root/category IDs in `tree.json` are structural nodes and do not need matching entries in `skills.json`.
-- `relatedSkills` should reference existing skill IDs.
-
 ## Seed Data Coverage
 
 The initial dataset includes examples for:

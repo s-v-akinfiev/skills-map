@@ -31,7 +31,6 @@ function validateSkillRecord(skillId, skill, errors) {
     "summary",
     "details",
     "highlights",
-    "relatedSkills",
   ];
 
   for (const field of requiredFields) {
@@ -69,9 +68,6 @@ function validateSkillRecord(skillId, skill, errors) {
     pushError(errors, `Skill "${skillId}" field "highlights" must be an array.`);
   }
 
-  if ("relatedSkills" in skill && !Array.isArray(skill.relatedSkills)) {
-    pushError(errors, `Skill "${skillId}" field "relatedSkills" must be an array.`);
-  }
 }
 
 function validateTreeNodeList(nodeId, childIds, errors) {
@@ -180,21 +176,6 @@ export function validateData(skills, tree) {
         pushError(
           errors,
           `Tree reference "${nodeId}" -> "${childId}" points to a missing skill/node.`,
-        );
-      }
-    }
-  }
-
-  for (const [skillId, skill] of Object.entries(skills)) {
-    if (!Array.isArray(skill.relatedSkills)) {
-      continue;
-    }
-
-    for (const relatedId of skill.relatedSkills) {
-      if (!(relatedId in skills)) {
-        pushError(
-          errors,
-          `Skill "${skillId}" references missing related skill "${relatedId}".`,
         );
       }
     }

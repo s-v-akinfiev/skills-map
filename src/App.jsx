@@ -281,7 +281,7 @@ export default function App() {
       updateSkillInData(current, selectedNodeId, (skill) => {
         const nextSkill = { ...skill };
 
-        if (field === "highlights" || field === "relatedSkills") {
+        if (field === "highlights") {
           nextSkill[field] = normalizeListInput(value);
           return nextSkill;
         }
@@ -320,7 +320,6 @@ export default function App() {
       summary: "Short summary",
       details: "Detailed description",
       highlights: ["First highlight"],
-      relatedSkills: [],
     });
 
     setData(nextData);
@@ -590,7 +589,6 @@ export default function App() {
                     <SkillCard
                       selectedNodeId={selectedNodeId}
                       skill={selectedSkill}
-                      skills={data.skills}
                     />
                   </section>
                 </aside>

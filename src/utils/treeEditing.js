@@ -121,11 +121,5 @@ export function deleteSkillFromData(data, nodeId) {
 
   delete nextData.tree.nodes[nodeId];
   delete nextData.skills[nodeId];
-
-  for (const skill of Object.values(nextData.skills)) {
-    skill.relatedSkills = skill.relatedSkills.filter((relatedId) => relatedId !== nodeId);
-  }
-
   return nextData;
 }
-

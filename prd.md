@@ -69,7 +69,6 @@ Displays:
 - Detailed description
 - Highlights (bullet points)
 - Tags
-- Related skills
 
 ---
 
@@ -311,7 +310,6 @@ VITE_EDIT_MODE=true/false
 - Export JSON
 
 ### Nice to Have
-- Related skills graph
 - Timeline view
 - PDF export
 - Dark mode

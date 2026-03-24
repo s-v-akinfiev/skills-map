@@ -153,15 +153,6 @@ export default function EditPanel({
                 />
               </label>
 
-              <label className="field">
-                <span>Related skill IDs (comma-separated)</span>
-                <input
-                  type="text"
-                  value={listValueToText(selectedSkill.relatedSkills)}
-                  onChange={(event) => onFieldChange("relatedSkills", event.target.value)}
-                />
-              </label>
-
               {selectedSkill.status === "future" ? (
                 <>
                   <label className="field field-full">

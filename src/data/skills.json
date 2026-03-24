@@ -11,8 +11,7 @@
       "Designed and evolved backend architecture in production environments",
       "Led legacy cleanup and incremental refactoring work",
       "Improved maintainability, delivery speed, and operational confidence"
-    ],
-    "relatedSkills": ["symfony", "mysql", "javascript"]
+    ]
   },
   "symfony": {
     "name": "Symfony",
@@ -26,8 +25,7 @@
       "Strong use of dependency injection and service boundaries",
       "Built operational and developer-facing console tooling",
       "Applied incremental framework-driven refactoring in mature systems"
-    ],
-    "relatedSkills": ["php", "mysql", "typescript"]
+    ]
   },
   "mysql": {
     "name": "MySQL",
@@ -41,8 +39,7 @@
       "Handled schema evolution in long-running projects",
       "Analyzed and improved slow or complex queries",
       "Diagnosed production issues involving data consistency and performance"
-    ],
-    "relatedSkills": ["php", "symfony", "go"]
+    ]
   },
   "java": {
     "name": "Java",
@@ -56,8 +53,7 @@
       "Explored typed backend workflows beyond the current main stack",
       "Compared Java service structure with PHP and Go tradeoffs",
       "Built familiarity with JVM-oriented project conventions"
-    ],
-    "relatedSkills": ["spring-boot", "mysql", "docker"]
+    ]
   },
   "spring-boot": {
     "name": "Spring Boot",
@@ -71,8 +67,7 @@
       "Learned core service bootstrapping patterns in the Spring ecosystem",
       "Compared framework conventions against Symfony-style service design",
       "Used it to explore production-style Java service structure"
-    ],
-    "relatedSkills": ["java", "docker", "mysql"]
+    ]
   },
   "rabbitmq": {
     "name": "RabbitMQ",
@@ -86,8 +81,7 @@
       "Worked with queue-driven task processing",
       "Used asynchronous flow design to decouple service responsibilities",
       "Handled delivery patterns where retries and buffering mattered"
-    ],
-    "relatedSkills": ["php", "symfony", "redis"]
+    ]
   },
   "redis": {
     "name": "Redis",
@@ -101,8 +95,7 @@
       "Applied caching to reduce repeated expensive work",
       "Used fast transient storage in backend-heavy applications",
       "Supported practical performance improvements without major redesign"
-    ],
-    "relatedSkills": ["php", "mysql", "rabbitmq"]
+    ]
   },
   "n8n": {
     "name": "n8n",
@@ -116,8 +109,7 @@
       "Built practical automation around integrations and internal workflows",
       "Reduced repetitive manual steps with low-friction orchestration",
       "Used visual workflow tooling where full custom development was unnecessary"
-    ],
-    "relatedSkills": ["rabbitmq", "php", "chatgpt"]
+    ]
   },
   "javascript": {
     "name": "JavaScript",
@@ -131,8 +123,7 @@
       "Built interactive UI behavior for product interfaces",
       "Used scripting to support delivery and tooling tasks",
       "Worked across backend and frontend boundaries when product work required it"
-    ],
-    "relatedSkills": ["react", "typescript", "php"]
+    ]
   },
   "html": {
     "name": "HTML",
@@ -146,8 +137,7 @@
       "Built semantic interface structure for practical product UIs",
       "Worked across template and component-driven frontend output",
       "Used markup intentionally to support accessibility and clarity"
-    ],
-    "relatedSkills": ["css", "javascript", "scss"]
+    ]
   },
   "react": {
     "name": "React",
@@ -161,8 +151,7 @@
       "Built component-driven screens and reusable UI pieces",
       "Worked with local state and interactive page flows",
       "Used Vite-based setup for modern frontend development"
-    ],
-    "relatedSkills": ["javascript", "typescript", "css"]
+    ]
   },
   "vue": {
     "name": "Vue",
@@ -176,8 +165,7 @@
       "Compared framework ergonomics across modern frontend stacks",
       "Built familiarity with Vue component and template conventions",
       "Used it to widen frontend perspective beyond the current main path"
-    ],
-    "relatedSkills": ["javascript", "html", "css"]
+    ]
   },
   "typescript": {
     "name": "TypeScript",
@@ -191,8 +179,7 @@
       "Used types to tighten component and data contracts",
       "Improved refactoring safety in UI code",
       "Benefited from stronger editor and tooling feedback"
-    ],
-    "relatedSkills": ["javascript", "react", "php"]
+    ]
   },
   "css": {
     "name": "CSS",
@@ -206,8 +193,7 @@
       "Implemented responsive layouts for practical product screens",
       "Improved readability and interaction clarity in existing UIs",
       "Supported design execution without depending on heavy frameworks"
-    ],
-    "relatedSkills": ["javascript", "react", "typescript"]
+    ]
   },
   "scss": {
     "name": "SCSS",
@@ -221,8 +207,7 @@
       "Organized larger stylesheets into maintainable structures",
       "Used variables and partials to reduce duplication",
       "Applied SCSS as a practical layer over standard CSS workflows"
-    ],
-    "relatedSkills": ["css", "html", "webpack"]
+    ]
   },
   "git": {
     "name": "Git",
@@ -236,8 +221,7 @@
       "Worked comfortably with branch-based team delivery workflows",
       "Used history and diffs for debugging and review",
       "Applied disciplined version control in production-oriented work"
-    ],
-    "relatedSkills": ["webpack", "docker", "chatgpt"]
+    ]
   },
   "webpack": {
     "name": "Webpack",
@@ -251,8 +235,7 @@
       "Worked with asset bundling and build configuration",
       "Used tooling knowledge to support frontend delivery pipelines",
       "Handled practical tradeoffs in browser-oriented packaging workflows"
-    ],
-    "relatedSkills": ["javascript", "scss", "git"]
+    ]
   },
   "docker": {
     "name": "Docker",
@@ -266,8 +249,7 @@
       "Used containers to make service setup more repeatable",
       "Improved consistency across development and deployment workflows",
       "Applied practical containerization without over-engineering"
-    ],
-    "relatedSkills": ["linux", "kubernetes", "spring-boot"]
+    ]
   },
   "linux": {
     "name": "Linux",
@@ -281,8 +263,7 @@
       "Worked comfortably in command-line driven development workflows",
       "Used Linux environments for backend and tooling tasks",
       "Handled routine environment-level investigation and automation"
-    ],
-    "relatedSkills": ["docker", "git", "new-relic"]
+    ]
   },
   "new-relic": {
     "name": "New Relic",
@@ -296,8 +277,7 @@
       "Used monitoring data to investigate production behavior",
       "Connected performance symptoms with code and infrastructure concerns",
       "Applied observability tooling as part of operational debugging"
-    ],
-    "relatedSkills": ["linux", "docker", "mysql"]
+    ]
   },
   "chatgpt": {
     "name": "ChatGPT",
@@ -311,8 +291,7 @@
       "Used AI assistance to accelerate drafting and exploration",
       "Improved throughput on repetitive research and implementation tasks",
       "Applied it as a support tool rather than a substitute for review"
-    ],
-    "relatedSkills": ["git", "javascript", "n8n"]
+    ]
   },
   "data-structures": {
     "name": "Data Structures",
@@ -326,8 +305,7 @@
       "Used structural reasoning to make implementation choices clearer",
       "Applied complexity awareness in practical coding decisions",
       "Used fundamentals to support debugging and refactoring work"
-    ],
-    "relatedSkills": ["javascript", "php", "java"]
+    ]
   },
   "algorithms": {
     "name": "Algorithms",
@@ -341,8 +319,7 @@
       "Used algorithmic reasoning to compare implementation options",
       "Applied complexity awareness when evaluating hot paths and edge cases",
       "Relied on fundamentals to simplify problem decomposition during delivery"
-    ],
-    "relatedSkills": ["data-structures", "javascript", "php"]
+    ]
   },
   "go": {
     "name": "Go",
@@ -356,7 +333,6 @@
       "Learn idiomatic concurrency and deployment patterns",
       "Broaden backend perspective beyond the current main stack"
     ],
-    "relatedSkills": ["php", "mysql"],
     "targetDescription": "Build one small production-style service and one CLI tool.",
     "motivation": "Expand backend range beyond the current primary stack."
   },
@@ -372,7 +348,6 @@
       "Understand deployment and rollout mechanics more deeply",
       "Improve fluency at the application-platform boundary"
     ],
-    "relatedSkills": ["go", "mysql", "docker"],
     "targetDescription": "Deploy a small service stack with observable rollout and rollback flow.",
     "motivation": "Strengthen infrastructure awareness beyond application code."
   }
