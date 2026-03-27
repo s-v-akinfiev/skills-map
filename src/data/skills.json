@@ -111,6 +111,7 @@
     "highlights": [
       "Applied data structures and algorithmic thinking in backend implementations",
       "Used appropriate structures (arrays, maps, queues, heaps) when designing data flows and processing logic",
+      "Used time complexity (Big O) to estimate performance and choose appropriate data structures and algorithms",
       "Continuously practiced problem-solving with various structures, including graphs and queues, using Java"
     ]
   },
