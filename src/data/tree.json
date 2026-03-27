@@ -1,11 +1,13 @@
 {
-  "roots": ["backend-engineering"],
+  "roots": ["backend-engineering", "ai"],
   "labels": {
-    "backend-engineering": "Backend Engineering"
+    "backend-engineering": "Backend Engineering",
+    "ai": "AI"
   },
   "nodes": {
     "backend-engineering": ["php", "mysql", "redis", "rabbitmq", "java", "data-structures"],
     "php": ["symfony", "doctrine"],
-    "java": ["spring-boot"]
+    "java": ["spring-boot"],
+    "ai": ["llm-integration", "rag", "n8n"]
   }
 }

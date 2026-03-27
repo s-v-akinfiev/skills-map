@@ -113,5 +113,40 @@
       "Used appropriate structures (arrays, maps, queues, heaps) when designing data flows and processing logic",
       "Continuously practiced problem-solving with various structures, including graphs and queues, using Java"
     ]
+  },
+  "llm-integration": {
+    "name": "LLM Integration",
+    "icon": "chatgpt",
+    "status": "CONFIDENT",
+    "summary": "Integration of large language models into backend systems and development workflows.",
+    "highlights": [
+      "Integrated LLM APIs into backend applications for real use cases",
+      "Used LLMs to support development workflows and tasks implementation",
+      "Worked with self-hosted LLM deployments for controlled environments",
+      "Handled request/response flows, limits, and practical integration constraints"
+    ]
+  },
+  "rag": {
+    "name": "RAG (Retrieval-Augmented Generation)",
+    "icon": "chatgpt",
+    "status": "CONFIDENT",
+    "summary": "Approach for combining LLMs with external data sources to improve response accuracy.",
+    "highlights": [
+      "Designed and implemented RAG workflows for backend applications",
+      "Implemented document ingestion and chunking strategies for retrieval",
+      "Worked with embeddings and vector-based search for relevant context selection",
+      "Built test cases to evaluate RAG response quality and retrieval accuracy"
+    ]
+  },
+  "n8n": {
+    "name": "n8n",
+    "icon": "n8n",
+    "status": "CONFIDENT",
+    "summary": "Workflow automation tool used to orchestrate backend integrations and AI-driven processes.",
+    "highlights": [
+      "Integrated backend applications with external services using n8n workflows",
+      "Used n8n to orchestrate AI-driven processes and data pipelines",
+      "Reduced manual integration effort through workflow-based automation"
+    ]
   }
 }
