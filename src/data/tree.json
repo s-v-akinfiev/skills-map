@@ -4,7 +4,7 @@
     "backend-engineering": "Backend Engineering"
   },
   "nodes": {
-    "backend-engineering": ["php", "mysql", "redis"],
+    "backend-engineering": ["php", "mysql", "redis", "rabbitmq"],
     "php": ["symfony", "doctrine"]
   }
 }

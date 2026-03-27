@@ -64,5 +64,18 @@
       "Applied Redis for fast-access data in backend-heavy systems",
       "Supported performance optimization without major architectural changes"
     ]
+  },
+  "rabbitmq": {
+    "name": "RabbitMQ",
+    "icon": "rabbitmq",
+    "status": "CONFIDENT",
+    "summary": "Message broker used for asynchronous processing and decoupling backend workflows.",
+    "highlights": [
+      "Used RabbitMQ with Symfony Messenger for async task processing",
+      "Designed queue-based workflows to decouple services and improve reliability",
+      "Worked with retries, delayed processing, and failure handling",
+      "Handled real-world issues related to queue behavior and message processing",
+      "Managed worker processes using Supervisor for stable background execution"
+    ]
   }
 }
