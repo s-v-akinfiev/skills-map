@@ -36,6 +36,7 @@
       "Long-term MySQL usage in production applications",
       "Optimized complex queries in legacy and high-load systems",
       "Worked with joins, indexing strategies, and query performance tuning",
+      "Used temporary tables and stored procedures for complex data processing and performance optimization",
       "Handled schema evolution in long-lived projects",
       "Investigated and resolved production issues related to data consistency and performance"
     ]
