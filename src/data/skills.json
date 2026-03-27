@@ -40,5 +40,17 @@
       "Handled schema evolution in long-lived projects",
       "Investigated and resolved production issues related to data consistency and performance"
     ]
+  },
+  "redis": {
+    "name": "Redis",
+    "icon": "redis",
+    "status": "CONFIDENT",
+    "summary": "In-memory data store used to improve performance and manage transient application state.",
+    "highlights": [
+      "Used caching to reduce database load and improve response times",
+      "Worked with session storage and short-lived application data",
+      "Applied Redis for fast-access data in backend-heavy systems",
+      "Supported performance optimization without major architectural changes"
+    ]
   }
 }
