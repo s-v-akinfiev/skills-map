@@ -28,5 +28,19 @@
       "Led code reviews and mentored developers in Symfony ecosystem"
     ],
     "years": 10
+  },
+  "mysql": {
+    "name": "MySQL",
+    "icon": "mysql",
+    "status": "CONFIDENT",
+    "summary": "Primary relational database used in backend systems with focus on query performance and data reliability.",
+    "highlights": [
+      "10+ years working with MySQL in production applications",
+      "Optimized complex queries in legacy and high-load systems",
+      "Worked with joins, indexing strategies, and query performance tuning",
+      "Handled schema evolution in long-lived projects",
+      "Investigated and resolved production issues related to data consistency and performance"
+    ],
+    "years": 10
   }
 }
