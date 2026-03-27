@@ -102,5 +102,16 @@
       "Explored typical enterprise Java project setup and conventions",
       "Used it to understand differences from Symfony-based architecture"
     ]
+  },
+  "data-structures": {
+    "name": "Data Structures and Algorithms",
+    "icon": "data-structures",
+    "status": "CONFIDENT",
+    "summary": "Applied as part of backend problem-solving and implementation work.",
+    "highlights": [
+      "Applied data structures and algorithmic thinking in backend implementations",
+      "Used appropriate structures (arrays, maps, queues, heaps) when designing data flows and processing logic",
+      "Continuously practiced problem-solving with various structures, including graphs and queues, using Java"
+    ]
   }
 }
