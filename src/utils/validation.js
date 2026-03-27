@@ -41,17 +41,6 @@ function validateSkillRecord(skillId, skill, errors) {
     );
   }
 
-  if (skill.status === "PLANNED" && "years" in skill) {
-    pushError(errors, `Skill "${skillId}" must not define "years" for planned status.`);
-  }
-
-  if (skill.status !== "PLANNED" && typeof skill.years !== "number") {
-    pushError(
-      errors,
-      `Skill "${skillId}" must define numeric "years" for status "${skill.status}".`,
-    );
-  }
-
   if ("highlights" in skill && !Array.isArray(skill.highlights)) {
     pushError(errors, `Skill "${skillId}" field "highlights" must be an array.`);
   }

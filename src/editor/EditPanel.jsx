@@ -100,18 +100,6 @@ export default function EditPanel({
                 </select>
               </label>
 
-              {selectedSkill.status !== "PLANNED" ? (
-                <label className="field">
-                  <span>Years</span>
-                  <input
-                    type="number"
-                    min="0"
-                    value={selectedSkill.years ?? 0}
-                    onChange={(event) => onFieldChange("years", Number(event.target.value))}
-                  />
-                </label>
-              ) : null}
-
               <label className="field field-full">
                 <span>Summary</span>
                 <input

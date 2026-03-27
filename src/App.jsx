@@ -283,13 +283,6 @@ export default function App() {
 
         if (field === "status") {
           nextSkill.status = value;
-
-          if (value === "PLANNED") {
-            delete nextSkill.years;
-          } else if (typeof nextSkill.years !== "number") {
-            nextSkill.years = 0;
-          }
-
           return nextSkill;
         }
 
@@ -310,7 +303,6 @@ export default function App() {
       name: "New Skill",
       icon: "spark",
       status: "BASIC",
-      years: 0,
       summary: "Short summary",
       highlights: ["First highlight"],
     });

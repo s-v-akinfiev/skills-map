@@ -17,10 +17,6 @@ Required fields for standard skill records:
 - `summary`
 - `highlights`
 
-Conditionally required:
-
-- `years`: required for all statuses except `PLANNED`
-
 ## Supported Status Values
 
 - `STRONG`

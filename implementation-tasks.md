@@ -25,7 +25,6 @@ This file breaks down the PRD in [prd.md](/home/akinfiev/misc/apps/skills-map/pr
 - [x] Implement validation for allowed skill statuses.
 - [x] Validate that every tree node exists in `skills.json` when applicable.
 - [x] Validate that tree roots exist in the node map.
-- [x] Validate that `years` is not required for `future` skills.
 - [x] Validate that parent-child references do not produce broken links.
 - [x] Add validation errors that are readable during local development.
 
@@ -55,7 +54,6 @@ This file breaks down the PRD in [prd.md](/home/akinfiev/misc/apps/skills-map/pr
 - [x] Display skill name.
 - [x] Display icon placeholder or icon mapping.
 - [x] Display level badge.
-- [x] Display years of experience when available.
 - [x] Display summary text.
 - [x] Display detailed description text.
 - [x] Display highlights as bullet points.
@@ -71,7 +69,6 @@ This file breaks down the PRD in [prd.md](/home/akinfiev/misc/apps/skills-map/pr
 - [x] Create a reusable badge/label component for levels.
 - [x] Define visual treatment for statuses: `current`, `learning`, `future`.
 - [x] Apply muted or dashed styling to future skills.
-- [x] Ensure future skills do not display misleading years-of-experience values.
 
 ## 8. Filters and Search
 

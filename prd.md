@@ -86,7 +86,6 @@ Each status must have:
 
 Behavior:
 - planned skills styled differently (e.g. dashed, faded)
-- no years required for planned
 
 ---
 
@@ -142,7 +141,6 @@ Optional:
     "name": "PHP",
     "icon": "php",
     "status": "STRONG",
-    "years": 10,
     "summary": "Main backend language",
     "highlights": ["Architecture", "Refactoring"],
     "tags": ["backend"]

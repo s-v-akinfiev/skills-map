@@ -5,13 +5,12 @@
     "status": "STRONG",
     "summary": "Primary backend language used for building and maintaining high-load production systems.",
     "highlights": [
-      "9+ years in commercial backend development across multiple production projects",
+      "Extensive commercial backend development across multiple production projects",
       "Led and executed migrations across major versions (5.6 → 8.x)",
       "Strong use of OOP and modern PHP features (strict types, 7+ ecosystem)",
       "Deep debugging experience, including vendor-level investigation",
       "Delivered wide range of features and fixes across long-lived codebases"
-    ],
-    "years": 10
+    ]
   },
   "symfony": {
     "name": "Symfony",
@@ -26,8 +25,7 @@
       "Integrated external systems (REST APIs, SOAP, payment providers)",
       "Built and maintained reusable Composer packages for internal platforms",
       "Led code reviews and mentored developers in Symfony ecosystem"
-    ],
-    "years": 10
+    ]
   },
   "mysql": {
     "name": "MySQL",
@@ -35,12 +33,11 @@
     "status": "CONFIDENT",
     "summary": "Primary relational database used in backend systems with focus on query performance and data reliability.",
     "highlights": [
-      "10+ years working with MySQL in production applications",
+      "Long-term MySQL usage in production applications",
       "Optimized complex queries in legacy and high-load systems",
       "Worked with joins, indexing strategies, and query performance tuning",
       "Handled schema evolution in long-lived projects",
       "Investigated and resolved production issues related to data consistency and performance"
-    ],
-    "years": 10
+    ]
   }
 }
