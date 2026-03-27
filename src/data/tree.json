@@ -5,6 +5,6 @@
   },
   "nodes": {
     "backend-engineering": ["php", "mysql", "redis"],
-    "php": ["symfony"]
+    "php": ["symfony", "doctrine"]
   }
 }

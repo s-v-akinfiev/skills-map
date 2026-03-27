@@ -27,6 +27,18 @@
       "Led code reviews and mentored developers in Symfony ecosystem"
     ]
   },
+  "doctrine": {
+    "name": "Doctrine ORM",
+    "icon": "doctrine",
+    "status": "STRONG",
+    "summary": "ORM used for data mapping and database interaction in Symfony applications.",
+    "highlights": [
+      "Worked with entity relationships, inheritance, and complex mappings",
+      "Handled performance issues such as N+1 queries and inefficient hydration",
+      "Optimized queries and data access patterns in legacy systems",
+      "Used Doctrine in long-lived applications with evolving schemas"
+    ]
+  },
   "mysql": {
     "name": "MySQL",
     "icon": "mysql",
