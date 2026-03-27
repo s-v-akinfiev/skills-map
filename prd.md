@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-**Product name:** Tech Skills Map  
+**Product name:** Skills Map  
 **Type:** Static web app (GitHub Pages)  
 **Goal:** Present a structured, interactive, and maintainable representation of personal technical skills as part of CV.
 

@@ -1,4 +1,4 @@
-# Tech Skills Map
+# Skills Map
 
 Static React + Vite app for presenting a structured technical skills map.
 
