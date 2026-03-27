@@ -148,5 +148,76 @@
       "Used n8n to orchestrate AI-driven processes and data pipelines",
       "Reduced manual integration effort through workflow-based automation"
     ]
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "icon": "javascript",
+    "status": "STRONG",
+    "summary": "Core language for building interactive frontend functionality and integrating UI with backend systems.",
+    "highlights": [
+      "9+ years working with JavaScript across multiple production projects",
+      "Implemented dynamic UI behavior and client-side logic",
+      "Worked across frontend and backend boundaries in full-stack scenarios",
+      "Used JavaScript to support tooling and integration tasks"
+    ]
+  },
+  "vue": {
+    "name": "Vue.js",
+    "icon": "vue",
+    "status": "CONFIDENT",
+    "summary": "Framework used for building structured and maintainable frontend interfaces.",
+    "highlights": [
+      "Built component-based user interfaces using Vue.js",
+      "Worked with reactive state and modular frontend architecture",
+      "Integrated frontend components with backend APIs",
+      "Worked with Vuex state management",
+      "Used Vue in production applications with real user flows"
+    ]
+  },
+  "html": {
+    "name": "HTML",
+    "icon": "html",
+    "status": "STRONG",
+    "summary": "Markup used to structure frontend interfaces and integrate with backend-rendered views.",
+    "highlights": [
+      "Built structured and semantic layouts for web applications",
+      "Worked with template-based rendering in backend-driven systems",
+      "Ensured clear structure and maintainability of UI markup"
+    ]
+  },
+  "css": {
+    "name": "CSS",
+    "icon": "css",
+    "status": "STRONG",
+    "summary": "Styling used to build responsive and usable interfaces for web applications.",
+    "highlights": [
+      "Implemented responsive layouts and UI styling for production systems",
+      "Improved usability and visual clarity of application interfaces",
+      "Worked with modular and maintainable styling approaches"
+    ]
+  },
+  "scss": {
+    "name": "SCSS",
+    "icon": "scss",
+    "status": "CONFIDENT",
+    "summary": "Preprocessor used to structure and maintain larger stylesheets.",
+    "highlights": [
+      "Used variables, nesting, and partials to organize styles",
+      "Improved maintainability of complex styling structures",
+      "Applied SCSS in real-world frontend workflows"
+    ]
+  },
+  "webpack": {
+    "name": "Webpack",
+    "icon": "webpack",
+    "status": "STRONG",
+    "summary": "Build tool used to manage and bundle frontend assets in production applications.",
+    "highlights": [
+      "Configured Webpack for frontend asset bundling in Symfony projects",
+      "Worked with build pipelines for JavaScript and SCSS",
+      "Configured Babel to support different JavaScript environments",
+      "Handled asset optimization and environment-specific builds",
+      "Used Webpack as part of full-stack development workflows"
+    ]
   }
 }

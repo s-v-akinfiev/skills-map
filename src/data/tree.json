@@ -1,13 +1,17 @@
 {
-  "roots": ["backend-engineering", "ai"],
+  "roots": ["backend-engineering", "ai", "frontend-and-ui"],
   "labels": {
     "backend-engineering": "Backend Engineering",
-    "ai": "AI"
+    "ai": "AI",
+    "frontend-and-ui": "Frontend and UI"
   },
   "nodes": {
     "backend-engineering": ["php", "mysql", "redis", "rabbitmq", "java", "data-structures"],
     "php": ["symfony", "doctrine"],
     "java": ["spring-boot"],
-    "ai": ["llm-integration", "rag", "n8n"]
+    "ai": ["llm-integration", "rag", "n8n"],
+    "frontend-and-ui": ["javascript", "webpack", "html"],
+    "javascript": ["vue"],
+    "html": ["css", "scss"]
   }
 }
