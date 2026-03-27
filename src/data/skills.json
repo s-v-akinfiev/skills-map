@@ -149,6 +149,68 @@
       "Reduced manual integration effort through workflow-based automation"
     ]
   },
+  "linux": {
+    "name": "Linux",
+    "icon": "linux",
+    "status": "STRONG",
+    "summary": "Primary environment for backend development, automation, and system-level tasks.",
+    "highlights": [
+      "Worked in Linux-based environments for backend development and operations",
+      "Created Bash scripts to automate development and deployment processes",
+      "Configured servers and handled environment setup",
+      "Applied basic security configuration for production environments",
+      "Handled system-level tasks and troubleshooting"
+    ]
+  },
+  "docker": {
+    "name": "Docker",
+    "icon": "docker",
+    "status": "STRONG",
+    "summary": "Containerization tool used to build and manage full application environments.",
+    "highlights": [
+      "Created production-ready Docker Compose configurations",
+      "Designed multi-service environments with isolated components",
+      "Configured services such as Node, RabbitMQ workers, cron, and monitoring tools",
+      "Used environment-based configuration via .env for flexible setups",
+      "Containerized full application stack for consistent development and deployment"
+    ]
+  },
+  "git": {
+    "name": "Git",
+    "icon": "git",
+    "status": "STRONG",
+    "summary": "Version control system used for structured team collaboration and controlled delivery workflows.",
+    "highlights": [
+      "Introduced and maintained Git-based development workflows (Git Flow)",
+      "Worked with branching strategies for feature development and releases",
+      "Supported team collaboration through structured merge and review processes"
+    ]
+  },
+  "ci-cd": {
+    "name": "CI/CD",
+    "icon": "git",
+    "status": "STRONG",
+    "summary": "Continuous integration and deployment workflows used to automate testing and delivery processes.",
+    "highlights": [
+      "Implemented CI pipelines to run tests and static code analysis",
+      "Automated merge request validation workflows",
+      "Implemented CD processes to deploy applications to environments",
+      "Improved delivery consistency and reduced manual deployment effort"
+    ]
+  },
+  "new-relic": {
+    "name": "New Relic",
+    "icon": "new-relic",
+    "status": "STRONG",
+    "summary": "Monitoring platform used to track application performance and system behavior in production.",
+    "highlights": [
+      "Implemented full application monitoring across backend, frontend, and infrastructure",
+      "Tracked performance metrics, network behavior, and server resource usage",
+      "Monitored frontend performance and JavaScript errors across user sessions",
+      "Used monitoring data to investigate and diagnose production issues",
+      "Optimized data collection to control resource usage and costs"
+    ]
+  },
   "javascript": {
     "name": "JavaScript",
     "icon": "javascript",
@@ -199,7 +261,7 @@
   "scss": {
     "name": "SCSS",
     "icon": "scss",
-    "status": "CONFIDENT",
+    "status": "STRONG",
     "summary": "Preprocessor used to structure and maintain larger stylesheets.",
     "highlights": [
       "Used variables, nesting, and partials to organize styles",

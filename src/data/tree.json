@@ -1,8 +1,9 @@
 {
-  "roots": ["backend-engineering", "ai", "frontend-and-ui"],
+  "roots": ["backend-engineering", "ai", "tooling-and-platform", "frontend-and-ui"],
   "labels": {
     "backend-engineering": "Backend Engineering",
     "ai": "AI",
+    "tooling-and-platform": "Tooling & Platform Skills",
     "frontend-and-ui": "Frontend and UI"
   },
   "nodes": {
@@ -10,6 +11,8 @@
     "php": ["symfony", "doctrine"],
     "java": ["spring-boot"],
     "ai": ["llm-integration", "rag", "n8n"],
+    "tooling-and-platform": ["linux", "docker", "git", "new-relic"],
+    "git": ["ci-cd"],
     "frontend-and-ui": ["javascript", "webpack", "html"],
     "javascript": ["vue"],
     "html": ["css", "scss"]
