@@ -77,5 +77,30 @@
       "Handled real-world issues related to queue behavior and message processing",
       "Managed worker processes using Supervisor for stable background execution"
     ]
+  },
+  "java": {
+    "name": "Java",
+    "icon": "java",
+    "status": "BASIC",
+    "summary": "Secondary backend language explored to expand ecosystem and architectural perspective.",
+    "highlights": [
+      "Completed structured training focused on enterprise Java development practices",
+      "Built educational backend projects using Java and Spring ecosystem",
+      "Used Java for small tools and exploratory implementations",
+      "Worked with core collections and streams API",
+      "Compared Java-based service design with PHP/Symfony approaches"
+    ]
+  },
+  "spring-boot": {
+    "name": "Spring Boot",
+    "icon": "spring-boot",
+    "status": "BASIC",
+    "summary": "Framework used to explore convention-driven Java service development.",
+    "highlights": [
+      "Built backend services using Spring Boot in educational projects",
+      "Learned dependency injection, configuration, and service structuring patterns",
+      "Explored typical enterprise Java project setup and conventions",
+      "Used it to understand differences from Symfony-based architecture"
+    ]
   }
 }

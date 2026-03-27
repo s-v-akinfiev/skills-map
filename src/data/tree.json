@@ -4,7 +4,8 @@
     "backend-engineering": "Backend Engineering"
   },
   "nodes": {
-    "backend-engineering": ["php", "mysql", "redis", "rabbitmq"],
-    "php": ["symfony", "doctrine"]
+    "backend-engineering": ["php", "mysql", "redis", "rabbitmq", "java"],
+    "php": ["symfony", "doctrine"],
+    "java": ["spring-boot"]
   }
 }
