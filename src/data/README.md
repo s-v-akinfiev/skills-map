@@ -7,6 +7,10 @@ This folder contains the source JSON files described in the PRD.
 - `skills.json`: skill records keyed by skill ID
 - `tree.json`: tree structure used to organize categories and parent-child links
 
+Optional tree fields:
+
+- `collapsedByDefault`: array of node IDs that should start collapsed in the UI
+
 ## Skill Record Shape
 
 Required fields for standard skill records:

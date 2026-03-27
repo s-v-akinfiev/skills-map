@@ -39,7 +39,11 @@ function buildNewSkillId(existingIds) {
 }
 
 function getExpandedNodeIds(tree) {
-  return Object.keys(tree.nodes ?? {});
+  const collapsedByDefault = Array.isArray(tree.collapsedByDefault)
+    ? new Set(tree.collapsedByDefault)
+    : new Set();
+
+  return Object.keys(tree.nodes ?? {}).filter((nodeId) => !collapsedByDefault.has(nodeId));
 }
 
 export default function App() {

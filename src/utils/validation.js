@@ -68,6 +68,33 @@ function validateTreeNodeList(nodeId, childIds, errors) {
   }
 }
 
+function validateCollapsedByDefault(tree, errors) {
+  if (!("collapsedByDefault" in tree)) {
+    return;
+  }
+
+  if (!Array.isArray(tree.collapsedByDefault)) {
+    pushError(errors, 'tree.json field "collapsedByDefault" must be an array when provided.');
+    return;
+  }
+
+  const nodeMap = isObjectRecord(tree.nodes) ? tree.nodes : {};
+
+  for (const nodeId of tree.collapsedByDefault) {
+    if (typeof nodeId !== "string") {
+      pushError(errors, 'tree.json field "collapsedByDefault" must contain only strings.');
+      continue;
+    }
+
+    if (!(nodeId in nodeMap)) {
+      pushError(
+        errors,
+        `tree.json field "collapsedByDefault" references missing node "${nodeId}".`,
+      );
+    }
+  }
+}
+
 function detectCycles(tree, errors) {
   const nodes = isObjectRecord(tree.nodes) ? tree.nodes : {};
   const visiting = new Set();
@@ -122,6 +149,8 @@ export function validateData(skills, tree) {
   if (!isObjectRecord(tree.nodes)) {
     pushError(errors, 'tree.json field "nodes" must be an object.');
   }
+
+  validateCollapsedByDefault(tree, errors);
 
   for (const [skillId, skill] of Object.entries(skills)) {
     validateSkillRecord(skillId, skill, errors);

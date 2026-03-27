@@ -1,5 +1,6 @@
 {
   "roots": ["backend-engineering", "ai", "tooling-and-platform", "frontend-and-ui"],
+  "collapsedByDefault": ["html"],
   "labels": {
     "backend-engineering": "Backend Engineering",
     "ai": "AI",
