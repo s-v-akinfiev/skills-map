@@ -409,7 +409,7 @@ export default function App() {
 
       <div className="app-overlay">
         <header className="app-header">
-          <p className="eyebrow">Serge Akinfiev | Skills Map</p>
+          <p className="eyebrow">Serge Akinfiev | Tech Skills Map</p>
         </header>
 
         <div className="toolbar-dock">
